@@ -5,9 +5,9 @@
 # purpose - to contain the database connection strings
 
 // Connection String
-		$host = "localhost";
-		$user = "kevinmcaleer";
-		$pass = "";
+		$host = "192.168.21.21";
+		$user = "kev";
+		$pass = "monkeybaby";
 		$db = "px";
 
 		// open a connection to the database server
