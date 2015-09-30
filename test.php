@@ -15,6 +15,7 @@ $myproject->name = 'Rainbow';
 $myprojectview = new projectview();
 $myprojectview->init();
 $myprojectview->show();
+$myproject->add();
 ?>
 </body>
 </html>

@@ -19,10 +19,14 @@ class project
 	public $status; 			// proposed, open, closed, abanodoned.
 	
 	// Saves the current record to the backend database
-	public function save()
-	{
-	   $connection
+	public function add()
+	{  
+		// the query beloew adds the project to the database
+		$query = "INSERT INTO project (name,startdate,finishdate,programmeid,budget,rag,status) VALUES ('" . $this->name . ", " . $this->startdate . ", " . $this->finishdate . ", " . $this->budget . ", " . $this->rag . ", " . $this->status . "')";
+		require_once '/includes/connection.php';
+		
+		$result = pg_query($connection, $query) or die("Couldn't add the project");
+
 	}
 }
-
 ?>
