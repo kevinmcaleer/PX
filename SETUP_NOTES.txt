@@ -1,0 +1,8 @@
+
+Unix box with:
+FreeBSD 10.2
+PHP5
+PHP5-Extensions
+Postgres 9.4 Server & Client
+apache24
+
