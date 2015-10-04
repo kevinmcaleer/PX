@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <title>Test PX</title>
 <link href="CSS/core.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+</style>
 </head>
 
 <body>
