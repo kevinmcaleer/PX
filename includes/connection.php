@@ -6,8 +6,8 @@
 
 // Connection String
 		$host = "192.168.21.21";
-		$user = "kev";
-		$pass = "monkeybaby";
+		$user = "pgsql";
+		$pass = "Colt45!";
 		$db = "px";
 
 		// open a connection to the database server
