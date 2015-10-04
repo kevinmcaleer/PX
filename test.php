@@ -2,20 +2,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>Test PX</title>
+<link href="CSS/core.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<p>Creating a Project:</p>
+<?php 
+include 'includes/header.php'; 
+?>
+<p>Creating a Project:</p> 
 <?php
 require_once 'includes/project.php';
 require_once 'includes/projectview.php';
+require_once 'includes/projectcontroller.php';
 $myproject = new project();
 $myproject->name = 'Rainbow';
-$myprojectview = new projectview();
-$myprojectview->init();
+$myprojectcontroller = new projectcontroller($myproject);
+$myprojectview = new projectview($myprojectcontroller,$myproject);
+//$myprojectview->init();
 $myprojectview->show();
 $myproject->add();
 ?>
 </body>
+<?php 
+include 'includes/footer.php';
+?>
 </html>

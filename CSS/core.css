@@ -1,0 +1,22 @@
+/* @override 
+	http://192.168.21.21/CSS/core.css */
+
+/* @group Basic */
+
+
+
+.box {
+	border: 2px solid silver;
+	margin: 5px;
+	padding: 5px;
+}
+.header {
+	background-color: orange;
+	padding: 5px;
+	color: white;
+	font: 11pt "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+
+/* @end *//* CSS Document */
+

@@ -4,7 +4,7 @@
 # created by Kevin McAleer
 # purpose - models a project
 
-require_once 'includes/connection.php';
+#require 'includes/connection.php';
 
 // The Project class
 class project
@@ -18,13 +18,30 @@ class project
 	public $rag;				// the projects Red, Amber or Green status
 	public $status; 			// proposed, open, closed, abanodoned.
 	
+	// initialize the class
+	function __construct()
+	{
+	  $this->id = 1;
+	  $this->name = 'empty';
+	  $this->startdate = '20151001';
+	  $this->finishdate = '20151225';
+	  $this->programmeid = 1;
+	  $this->budget = '0';
+	  $this->rag = 'G';
+	  $this->status = '1'; // 1 is active, 0 is closed	
+	}
+	
 	// Saves the current record to the backend database
 	public function add()
 	{  
-		// the query beloew adds the project to the database
-		$query = "INSERT INTO project (name,startdate,finishdate,programmeid,budget,rag,status) VALUES ('" . $this->name . ", " . $this->startdate . ", " . $this->finishdate . ", " . $this->budget . ", " . $this->rag . ", " . $this->status . "')";
-		require_once '/includes/connection.php';
 		
+		// the query beloew adds the project to the database
+		$query = "INSERT INTO project (name, startdate, finishdate, programmeid, budget, rag, status) VALUES ('" . $this->name . "', '" . $this->startdate . "', '" . $this->finishdate . "', '" . $this->programmeid . "', '" .  $this->budget . "', '" . $this->rag . "', '" . $this->status . "');";
+		
+		// connect to the database
+		require 'includes/connection.php';
+	
+		// execute the query or return an error
 		$result = pg_query($connection, $query) or die("Couldn't add the project");
 
 	}
