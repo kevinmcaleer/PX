@@ -31,6 +31,23 @@ class project
 	  $this->status = '1'; // 1 is active, 0 is closed	
 	}
 	
+	// Load the record 
+	public function load($pid) // pid is the project id to load
+	{
+		$query = "SELECT * FROM project where project.id = " . $pid . ";";
+		require 'includes/connection.php';
+		$result = pg_query($connection, $query) or die("couldn't load the project, ID not found.");
+		$row = pg_fetch_array($result);
+		$this->id = $row['id'];
+		$this->name = $row['name'];
+		$this->startdate = $row['startdate'];
+		$this->finishdate = $row['finishdate'];
+		$this->budget = $row['budget'];
+		$this->programmeid = $row['programmeid'];
+		$this->rag = $row['rag'];
+		$this->status = $row['status'];
+	}
+	
 	// Saves the current record to the backend database
 	public function add()
 	{  

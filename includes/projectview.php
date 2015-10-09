@@ -6,11 +6,13 @@
 
 require_once 'includes/project.php';
 require_once 'includes/projectcontroller.php';
+require_once 'includes/table.php';
 
 class projectview
 {
 	private $_project;
 	private $_projectcontroller;
+	private $_mytable;
 	
 	public function __construct($controller, $model)
 	{
@@ -18,6 +20,8 @@ class projectview
 		$this->_projectcontroller = $controller;
 		
 		#$this->_project->name = 'kevin';
+		// load data into $this->_mytable;
+		
 	}
 		
 	public function show()
