@@ -4,20 +4,17 @@
 <meta charset="UTF-8">
 <title>Test PX</title>
 <link href="CSS/core.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-</style>
 </head>
 
 <body>
 <?php 
-include 'includes/header.php'; 
+include 'includes/header.php';  // load the standard header
 ?>
+<div class="page">
+<?php
+include 'includes/sidebar.php'; // show the sidebar menu
+?>
+<div class="content">
 <p>Creating a Project:</p> 
 <?php
 require_once 'includes/project.php';
@@ -36,6 +33,8 @@ $myprojectview->show();
 $mytable->show();
 // $myproject->add();
 ?>
+</div> <!-- content -->
+</div> <!-- page -->
 </body>
 <?php 
 include 'includes/footer.php';
