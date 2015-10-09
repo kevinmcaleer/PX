@@ -7,4 +7,4 @@
 ?>
 
 <hr />
-<a href="index.php">Home</a> | <a href="test.php">Test</a>
+<a href="index.php">Home</a> | <a href="test.php">Test</a> | <a href="projectform.php">Project Form</a>

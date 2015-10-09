@@ -5,5 +5,8 @@ PHP5
 PHP5-Extensions
 Postgres 9.4 Server & Client
 apache24
+Create a VM for development portability - create it in Virtualbox.
+=======
 GitHub Desktop
 Git (Xcode)
+

@@ -25,12 +25,12 @@ include 'includes/header.php';
 # px start page - index.php 
 # created 30 September 2015
 # created by Kevin McAleer
-# purpose - 
+# purpose - Main landing page
 
-$name = $_SERVER['SCRIPT_NAME'];
 echo 'PX v0.1';
 echo '<br />';
-echo 'Projects List';
+echo '<a href="addproject.php">Add Project</a>';
+
 
 ?>
 </div>
