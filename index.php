@@ -16,7 +16,7 @@ body {
 <?php
 include 'includes/header.php';
 ?>
-<div class="	box">
+<div class="box">
 <div id="welcome">
 <h1>Welcome to PX.</h1>
 </div>
