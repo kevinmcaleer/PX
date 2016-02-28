@@ -1,3 +1,10 @@
+<?php 
+# px start page - index.php 
+# created 30 September 2015
+# created by Kevin McAleer
+# purpose - Main landing page
+# change control - [28.02.2016] changed _box to box
+?>
 <html>
 <head>
 <title>PX</title>
@@ -21,11 +28,7 @@ include 'includes/header.php';
 <h1>Welcome to PX.</h1>
 </div>
 <div id="projectlist">
-<?php 
-# px start page - index.php 
-# created 30 September 2015
-# created by Kevin McAleer
-# purpose - Main landing page
+<?php
 
 echo 'PX v0.1';
 echo '<br />';
