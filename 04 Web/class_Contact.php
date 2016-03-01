@@ -20,8 +20,10 @@ class Contact
 		require 'connection.php';
 		$query = "INSERT INTO contact (title, firstname, middlename, surname, dob, gender) VALUES ('$this->title','$this->firstname', '$this->middlename', '$this->surname', '$this->dob', '$this->gender')";
 		//echo $query;
-		$result = pg_query($connection, $query) or die("There was a problem running the create query");
-		pg_close($connection);
+		
+		$result = $conn->query($query);
+		// $result = pg_query($connection, $query) or die("There was a problem running the create query");
+		// pg_close($connection);
 	}
 	
 	public function load2($myID)
@@ -52,13 +54,16 @@ class Contact
 	{
 		if(!empty($uid))
 		{
-			require 'connection.php';
+			require 'scconnection.php';
 			//echo $id;
 			$query = "SELECT * FROM contact WHERE id = '$uid'";
 		/// echo $query;
-		$result = pg_query($connection, $query) or die("could not run load query: $query");
+		
+		// $result = pg_query($connection, $query) or die("could not run load query: $query");
+		$result = $connection->query($query) or die("could not run load query: $query");
 		// echo pg_num_rows($result);
-		$rows = pg_fetch_array($result);
+		
+		$rows = -$result->fetch(PDO::FETCH_ASSOC);
 		
 		// echo "title - " . $rows["title"];
 		
@@ -72,7 +77,7 @@ class Contact
 		$this->level = $rows["level"];
 		$this->email = $rows["email"];
 		$this->pass = $rows["pass"];
-		pg_close($connection);
+		// pg_close($connection);
 		// Contact::show();
 		// echo $this->DOB;
 		}

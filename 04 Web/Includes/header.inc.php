@@ -48,14 +48,16 @@ include 'includes/linkscript.inc.php';
 
 // if logged in show the logout link 
 // else show the login link
-
+if (isset($_SESSION['firstname'])) {
 if ($_SESSION['firstname'] != '')
 {
 	// do this if the user is logged in
 	
 	echo '<p>Welcome <a href="account.php">'. $_SESSION['firstname']. '</a>';
 	echo ", <a href=\"logout.php\">Logout </a></p>";
-} else
+}
+}
+ else
 {
 	echo '<a href="login.php"> Login </a></p>';
 }

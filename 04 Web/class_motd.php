@@ -14,8 +14,8 @@ class motd
 	{
 		include 'sc_connection.php';
 		$query = "SELECT id, message, expiry FROM motd WHERE id = " . $mid;
-		$result = pg_query($sc_connection, $query) or die('There was a problem running the motd query');
-		$row = pg_fetch_array($result);
+		$result = $sc_connection->query($query) or die('There was a problem running the motd query');
+		$row = $result->fetchall();
 		$this->id = $mid;
 		$this->message = $row['message'];
 		$this->expiry = $row['expiry'];
