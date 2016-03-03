@@ -13,6 +13,7 @@ class Contact
 	public $dob="01/01/2010";
 	public $gender;
 	public $level = 'S'; // S = Standard User, A = Administrator
+	public $email;
 	
 	// methods
 	public function create()
@@ -31,7 +32,7 @@ class Contact
 	{
 	    require '../resources/config.php';
 		//require '../../delete/connection.php';
-	    $query = "SELECT * FROM users WHERE user_id = $myID";
+	    $query = "SELECT * FROM users WHERE user_id = $myID"; // TODO - change select * to specific fields.
 	    //echo "Query: " . $query . " <br />";
 	    $result = pg_query($connection, $query) or die('Could not find that user');
 	    //$row = pg_fetch_row($result);
@@ -63,10 +64,10 @@ class Contact
 		/// echo $query;
 		
 		// $result = pg_query($connection, $query) or die("could not run load query: $query");
-		$result = $connection->query($query) or die("could not run load query: $query");
+		$result = $sc_connection->query($query) or die("could not run load query: $query");
 		// echo pg_num_rows($result);
 		
-		$rows = -$result->fetch(PDO::FETCH_ASSOC);
+		$rows = $result->fetch(PDO::FETCH_ASSOC);
 		
 		// echo "title - " . $rows["title"];
 		
@@ -146,6 +147,7 @@ class Contact
 		echo "DOB: " . $this->dob . "<br />";
 		echo "Gender: " . $this->gender . "<br />";
 		echo "Level: " . $this->level. "<br />";
+		echo "Email: " . $this->email . "<br />";
 		echo "<hr>";
 	}
 	

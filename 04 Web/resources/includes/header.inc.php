@@ -20,7 +20,7 @@ include INCLUDES_PATH . 'linkscript.inc.php';
 <tr><td align="left" bgcolor="#0054A6">
 <div id="navigation">
 <ul>
-<li><a href="../index.php">Home</a></li> 
+<li><a href="index.php">Home</a></li> 
 <?php
 // check if the user is an administrator
 
@@ -29,7 +29,7 @@ include INCLUDES_PATH . 'linkscript.inc.php';
 	// echo $_SESSION['id'];
 
 	// require_once('../../Includes/connection.php');
-	require_once('../includes/class/class_Contact.php');
+	require_once('../resources/class/class_Contact.php');
 	$usr = new Contact();
 	$usr->load($_SESSION['id']);
 	if ($usr->level=='A')

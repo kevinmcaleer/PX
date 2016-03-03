@@ -7,7 +7,7 @@ if (isset($_POST['submitted']))
 
 	// Need the database connection:
 
-	require_once ('../resources/config.php');
+	require ('../resources/config.php');
 	
 	// For processing the login:
 
@@ -18,13 +18,13 @@ if (isset($_POST['submitted']))
 
 	$e =  $_POST['email'];
 	
-	$e = $e . "@sellafieldsites.com";
+	$e = $e . ""; // TODO Add the tenant email domain here. (how do we know which one to add?)
 	$p =  $_POST['pass'];
 	
 	// echo $e . " " . $p;
 	
 	
-	list ($check, $data) = check_login($connection, $e, $p);
+	list ($check, $data) = check_login($sc_connection, $e, $p);
 
 	if($check) { // OK!
 

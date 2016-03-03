@@ -55,7 +55,7 @@
 	?>
   <table border="1"><tr> <td bgcolor="#0054a6>"  
     <div id="account">
-<p>Welcome <a href="../account.php">Kevin</a>, <a href="../logout.php">Logout </a></p></div><div id="search"><form action="../public_html/SearchResults.php" method="GET" name="searchform"><p> Search </p><input type="text" name="search" class="tb"/><input type="submit"></form></div>
+<p>Welcome <a href="../public_html/account.php">Kevin</a>, <a href="../logout.php">Logout </a></p></div><div id="search"><form action="../public_html/SearchResults.php" method="GET" name="searchform"><p> Search </p><input type="text" name="search" class="tb"/><input type="submit"></form></div>
    </td></tr></table>
    
     <p>&nbsp;</p></td>

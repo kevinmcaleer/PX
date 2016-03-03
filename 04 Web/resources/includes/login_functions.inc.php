@@ -35,7 +35,7 @@ return $url;
 
 function check_login($connection, $email, $upass)
 {
-	
+	include '../resources/config.php';
 	$errors = array(); // intialise the error array
 
 	// Validate the email address:
@@ -62,11 +62,11 @@ function check_login($connection, $email, $upass)
 
 		// Retrieve the user_id and firstname for that email/password combination:
 		
-		include ('../../Includes/connection.php');
+		//include ('../../Includes/connection.php');
 		
-		$q = "SELECT id, firstname, email, pass FROM contact WHERE email = '" .$email. "' AND pass = '". $upass ."'";
+		$q = "SELECT count(id), firstname, email, pass FROM contact WHERE email = '" .$email. "' AND pass = '". $upass ."'";
 		//echo $q;
-		$r = pg_query($connection, $q); // Run the query.
+		$r = $sc_connection->query($q)->fetchcolumn(); // Run the query.
 
 		// Check the result:
 		
@@ -74,13 +74,18 @@ function check_login($connection, $email, $upass)
 		//echo "email:". $email. "\n";
 		//echo "pass:" .$pass . "\n";
 		
-		if (pg_num_rows($r) == 1 )
+		
+		//$mycount = $sc_connection->query($query)->fetchcolumn();
+		//$rowcount = $mycount;
+		
+		
+		if ($r == 1 )
 		{
 
 			// Fetch the Record:
 
 			// $row = pg_fetch_array($r, PGSQL_ASSOC);
-			$row = pg_fetch_array($r);
+			$row = $r;
 
 			// Return true and the record:
 			return array(true,$row);

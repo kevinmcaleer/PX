@@ -34,7 +34,7 @@ if (!empty($errors)) {
 <div id="login">
 <h1>Login</h1>
 
-<form action="../resources/includes/login.php" method="post">
+<form action="login.php" method="post">
 
 <p>Username: <input type="text" name="email" size="20" maxlength="80" class="tb" /></p>
 <p>Password: <input type="password" name="pass" size="20" maxlength="20" class="tb" /></p>
