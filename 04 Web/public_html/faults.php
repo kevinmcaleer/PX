@@ -6,11 +6,11 @@
 
 session_start();
 
-include 'resources/includes/header.inc.php';
+include '../resources/includes/header.inc.php';
 
 if(isset($_SESSION['id']))
 {
-	include 'resources/includes/navigation.inc.php';
+	include '../resources/includes/navigation.inc.php';
 	
 	// Create a table for layout - 2 columns, 1 row
 	
@@ -83,9 +83,9 @@ if(isset($_SESSION['id']))
 }
 else
 {
-	include 'login_required.php';
+	include '../resources/includes/login_required.php';
 }
 
-include 'resources/includes/footer.inc.php';
+include '../resources/includes/footer.inc.php';
 
 ?>

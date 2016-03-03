@@ -12,8 +12,7 @@ class Fortune
 	// Gets a random fortune from the database
 	public function getRandom()
 	{
-		echo 'loading config.php';
-		include '../config.php';
+		include '../resources/config.php';
 		$query = "select count(id) from fortune";
 		$mycount = $sc_connection->query($query)->fetchcolumn();
 		$rowcount = $mycount;

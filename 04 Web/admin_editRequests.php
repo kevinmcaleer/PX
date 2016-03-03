@@ -118,7 +118,7 @@ if(isset($_SESSION['id']))
 }
 else
 {
-	require 'login_required.php';
+	require 'resources/includes/login_required.php';
 }
 include 'resources/includes/footer.inc.php';
 ?>

@@ -4,16 +4,16 @@
 
 session_start();
 
-include 'resources/includes/header.inc.php';
+include '../resources/includes/header.inc.php';
 
 
-include 'resources/class/class_Service.php';
+include '../resources/class/class_Service.php';
 $serviceList = new Service();
 $serviceList->loadall($myList);
 
-require 'resources/includes/navigation.inc.php';
+require '../resources/includes/navigation.inc.php';
 
-include 'resources/includes/service.inc.php';
+include '../resources/includes/service.inc.php';
 
 /////////////////////////////////////////////////////////////////////
 //
@@ -22,8 +22,9 @@ include 'resources/includes/service.inc.php';
 
 echo '<div class="message">';
 echo '<table cellspacing="0" cellpadding="0"><tr><td >';
-echo '<img src="images/services.png" width="64" class="icon"/></td><td>';
+echo '<img src="img/services.png" width="64" class="icon"/></td><td>';
 echo '<h1>Service List</h1><br />';
+// TODO rename to tenant name
 echo '<p>Below is a list of services available to users of the Sellafield Ltd computer network. Click on a service to see more information or to make a request.</p>';
 echo '</td></tr></table>';
 echo '</div>';
@@ -32,7 +33,7 @@ echo '<form action="servicepage.php" name="serviceform" method="POST">
 <input type="hidden" name="serviceid" />'  . "\n";
 
 echo '<table width="100%" border="0">';
-while ($row = pg_fetch_array($myList))
+while ($row = $myList->fetchall(PDO::FETCH_ASSOC))
 {
 	echo "<tr>\n";
 	echo '<td class="ServiceStrip">';
@@ -55,14 +56,14 @@ while ($row = pg_fetch_array($myList))
 	// display names of children
 	
 	/*
-	require_once 'resources/class/class_Service.php';
-	require 'delete/sc_connection.php';
+	require_once '../resources/class/class_Service.php';
+	require '../delete/sc_connection.php';
 	
 	$q = "SELECT * FROM service WHERE parent =". $row['id'];
 	$r = pg_query($sc_connection, $q);
 	*/
 	
-	require_once 'resources/class/class_Service.php';
+	require_once '../resources/class/class_Service.php';
 	$myChild = new Service();
 	$myChild->load($row['id']);
 	// $myChild->show();
@@ -109,6 +110,6 @@ echo "</table>\n";
 echo "</form>\n";
 echo "</div>\n";
 
-include 'resources/includes/footer.inc.php';
+include '../resources/includes/footer.inc.php';
 
 ?>

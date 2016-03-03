@@ -16,10 +16,11 @@ class Service
 	// load the specific service
 	public function load($serviceid)
 	{
-		include '../../delete/connection.php';
-		include '../../delete/sc_connection.php';
+		//include '../../delete/connection.php';
+		//include '../../delete/sc_connection.php';
+		include '../resources/config.php';
 		$query = "SELECT * FROM service WHERE id = $serviceid";
-		$result = pg_query($sc_connection, $query);
+		$result = $sc_connection->query($query);
 		
 		if (pg_num_rows($result) == 1)
 		{
@@ -41,10 +42,10 @@ class Service
 	// loads all services into an array that are top level services
 	public function loadall(&$result)
 	{
-		require '../../delete/sc_connection.php';
-		
+		//require '../../delete/sc_connection.php';
+		require '../resources/config.php';
 		$query = "SELECT id, name, description, parent, image FROM service WHERE parent is null ORDER BY name ASC";
-		$result = pg_query($sc_connection, $query);
+		$result = $sc_connection->query($query);
 		
 	}
 	
@@ -53,7 +54,7 @@ class Service
 	{
 		require '../../delete/sc_connection.php';
 		$query = "SELECT id, name, description, parent, image FROM service ORDER BY name ASC";
-		$result = pg_query($sc_connection, $query);
+		$result = $sc_connection->query($query);
 		return $result;
 	}
 	
@@ -74,7 +75,7 @@ class Service
 	{
 		require '../../delete/sc_connection.php';
 		$query = "SELECT id, name, description, responsibilities, restrictions FROM service WHERE parent = " . $this->id;
-		$result = pg_query($sc_connection, $query);
+		$result = $sc_connection->query($query);
 		
 		return ($result);
 	}

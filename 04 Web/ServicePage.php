@@ -307,7 +307,7 @@ else
 {
 	session_start();
 	include 'resources/includes/header.inc.php';
-	include 'login_required.php';
+	include 'resources/includes/login_required.php';
 
 }
 

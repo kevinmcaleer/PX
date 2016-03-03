@@ -16,7 +16,7 @@ function sc_nav ( selectedtype )
 </script>
 
 <table height="72" border="0"><tr valign="bottom"><td>
-<form action="../../Includes/loadpage.php" name="page" id="navform" method="POST">
+<form action="loadpage.php" name="page" id="navform" method="POST">
 <input type="hidden" name="page" />
 <div id="sc_navigation">
 <ul>

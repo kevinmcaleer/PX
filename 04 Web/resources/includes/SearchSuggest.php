@@ -1,5 +1,5 @@
 <base target="_top">
-<link href="public_html/css/core.css" rel="stylesheet" type="text/css">
+<link href="../../public_html/css/core.css" rel="stylesheet" type="text/css">
 
 <script language="JavaScript" type="text/javascript">
 <!--
@@ -22,7 +22,7 @@ if(isset($_GET['search']))
 	echo '<form name="suggestform" action="servicepage.php" method="POST">';
 	echo '<input type="hidden" name="serviceid">';
 	
-	include 'resources/class/class_Search.php';
+	include '../class/class_Search.php';
 	$mySearchService = new SearchService();
 	$mySearchRequest = new SearchRequest();
 	$mySearchITContact = new SearchITContact();

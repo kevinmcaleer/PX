@@ -5,8 +5,8 @@
 // Display search results
 
 session_start();
-include 'resources/includes/header.inc.php';
-include 'resources/includes/navigation.inc.php';
+include '../resources/includes/header.inc.php';
+include '../resources/includes/navigation.inc.php';
 
 echo '<div class="message">';
 echo '<h1>Search';
@@ -30,7 +30,7 @@ if(isset($_GET['search']))
 
 	
 	
-	//require 'resources/class/class_Search.php';
+	//require '../resources/class/class_Search.php';
 	//$mySearch = new Search();
 	//$search = $_GET['search'];
 	//$myResults = $mySearch->go($search);
@@ -51,7 +51,7 @@ else
 	
 }
 echo '<iframe src="searchsuggest.php" name="searchframe" height="600" width="100%" frameborder="0"></iframe>';
-include 'resources/includes/footer.inc.php';
+include '../resources/includes/footer.inc.php';
 
 
 ?>

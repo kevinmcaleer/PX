@@ -24,7 +24,7 @@ if (isset($_SESSION['id']))
 }
 else
 {
-	include 'login_required.php';
+	include 'resources/includes/login_required.php';
 }
 
 include 'resources/includes/footer.inc.php';

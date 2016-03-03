@@ -17,7 +17,8 @@ class Contact
 	// methods
 	public function create()
 	{
-		require '../../delete/connection.php';
+		//require '../../delete/connection.php';
+		require '../resources/config.php';
 		$query = "INSERT INTO contact (title, firstname, middlename, surname, dob, gender) VALUES ('$this->title','$this->firstname', '$this->middlename', '$this->surname', '$this->dob', '$this->gender')";
 		//echo $query;
 		
@@ -28,7 +29,8 @@ class Contact
 	
 	public function load2($myID)
 	{
-	    require '../../delete/connection.php';
+	    require '../resources/config.php';
+		//require '../../delete/connection.php';
 	    $query = "SELECT * FROM users WHERE user_id = $myID";
 	    //echo "Query: " . $query . " <br />";
 	    $result = pg_query($connection, $query) or die('Could not find that user');
@@ -54,7 +56,8 @@ class Contact
 	{
 		if(!empty($uid))
 		{
-			require '../../scconnection.php';
+			require '../resources/config.php';
+			//require '../../scconnection.php';
 			//echo $id;
 			$query = "SELECT * FROM contact WHERE id = '$uid'";
 		/// echo $query;
@@ -107,25 +110,28 @@ class Contact
 		
 	public function update()
 	{
-		require '../../delete/connection.php';
+		require '../resources/config.php';
+		//require '../../delete/connection.php';
 		
 		
 		$DOBdate = Contact::date_tableSQL($this->DOB);
 		
 		$query = "UPDATE contact SET title = '$this->title', firstname = '$this->firstname', middlename = '$this->middlename', surname = '$this->surname', DOB = '$DOBdate', gender = '$this->gender' WHERE id = '$this->id'";
 		// echo $query;
-		$result = pg_query($connection, $query);
-		pg_close($connection);
+		$result = $sc_connection->query($query);
+		//pg_close($connection);
 	}
 	
 	public function delete($id)
 	{
-		require '../../delete/connection.php';
+		//require '../../delete/connection.php';
+		require '../resources/config.php';
 	}
 	
 	public function find($name)
 	{
-		require '../../delete/connection.php';
+		//require '../../delete/connection.php';
+		require '../resources/config.php';
 	}
 	
 	// displays all the fields of the current record

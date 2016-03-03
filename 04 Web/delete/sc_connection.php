@@ -1,5 +1,4 @@
 <?php
-
 // sc_connection - the service catalogue database connection stuff
 
 		$schost = "localhost"; 									// Server Hostname
@@ -21,6 +20,4 @@
     		die('Error : ' . $ex->getMessage());
     	}
 		// $dbc = pg_connect ("host=$host dbname=$db user=$user password=$pass");
- 
-
-?>
+ ?>

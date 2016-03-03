@@ -23,8 +23,8 @@ $page_title = "Service Catalogue: Home";
 
 // load the page content
 
-//include '../Apps' . $myApp->baseurl . '/' . '../frontpage.html' ;
+//include '../Apps' . $myApp->baseurl . '/' . 'frontpage.html' ;
 
-include '../frontpage.html';
+include 'frontpage.html';
 ?>
 

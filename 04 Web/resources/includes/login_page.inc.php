@@ -6,7 +6,7 @@
 
 $page_title = 'Login';
 
-include ('../../Includes/includes/header.inc.php');
+include ('../resources/includes/header.inc.php');
 
 // format the login page
 
@@ -34,11 +34,11 @@ if (!empty($errors)) {
 <div id="login">
 <h1>Login</h1>
 
-<form action="../../Includes/login.php" method="post">
+<form action="../resources/includes/login.php" method="post">
 
 <p>Username: <input type="text" name="email" size="20" maxlength="80" class="tb" /></p>
 <p>Password: <input type="password" name="pass" size="20" maxlength="20" class="tb" /></p>
-<p><input type="submit" name="submit" value="Login" /> Don't have an account? <a href="../../Includes/signup.php">Signup here</a></p>
+<p><input type="submit" name="submit" value="Login" /> Don't have an account? <a href="../resources/includes/signup.php">Signup here</a></p>
 <input type="hidden" name="submitted" value="TRUE" />
 </form>
 
@@ -46,6 +46,6 @@ if (!empty($errors)) {
 
 <?php // Include the footer:
 
-include ('../../Includes/includes/footer.inc.php');
+include ('../resources/includes/footer.inc.php');
 
 ?>

@@ -9,7 +9,7 @@
     if something changes such as your database credentials, or a path to a specific resource,
     you'll only need to update it here.
 */
- 
+global $sc_connection;
 $config = array(
     "db" => array(
         "sc" => array(
@@ -38,7 +38,7 @@ $config = array(
     )
 	
 );
-$config['db']['sc']['dsn'] = "mysql:host=". $config['db']['sc']['host'] . ";" . $config['db']['sc']['dbname'];
+$config['db']['sc']['dsn'] = "mysql:host=". $config['db']['sc']['host'] . "; dbname=" . $config['db']['sc']['dbname'];
  
 /*
     I will usually place the following in a bootstrap file or some type of environment
@@ -50,11 +50,11 @@ $config['db']['sc']['dsn'] = "mysql:host=". $config['db']['sc']['host'] . ";" . 
     Creating constants for heavily used paths makes things a lot easier.
     ex. require_once(LIBRARY_PATH . "Paginator.php")
 */
-defined("LIBRARY_PATH")   || define("LIBRARY_PATH",  '../library/'));
+defined("LIBRARY_PATH")   || define("LIBRARY_PATH",  '../library/');
 defined('INCLUDES_PATH')  || define ("INCLUDES_PATH", '../resources/includes/');
-defined("CLASS_PATH")     || define("CLASS_PATH", '../resources/class'));
-defined("RESOURCES")      || define("RESOURCES",  '../resources/'));     
-defined("TEMPLATES_PATH") ||  define("TEMPLATES_PATH", '../templates/'));
+defined("CLASS_PATH")     || define("CLASS_PATH", '../resources/class');
+defined("RESOURCES")      || define("RESOURCES",  '../resources/');     
+defined("TEMPLATES_PATH") ||  define("TEMPLATES_PATH", '../templates/');
  
 /*
     Error reporting.
@@ -62,7 +62,7 @@ defined("TEMPLATES_PATH") ||  define("TEMPLATES_PATH", '../templates/'));
 ini_set("error_reporting", "true");
 error_reporting(E_ALL|E_STRCT);
  
-echo 'setting connection'; 
+
 try {
 	$sc_connection = new PDO($config['db']['sc']['dsn'], $config['db']['sc']['username'], $config['db']['sc']['password']);
 	$sc_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -1,4 +1,4 @@
-<link href="public_html/css/core.css" rel="stylesheet" type="text/css" />
+<link href="css/core.css" rel="stylesheet" type="text/css" />
 
 <?php
 
@@ -12,7 +12,7 @@
 	//$searchContact = new ITContact();
 	//$searchContact->
 	
-	include 'resources/class/class_Search.php';
+	include '../resources/class/class_Search.php';
 	$mySearchITContact = new SearchITContact();
 	$search = $_GET['search'];
 	$mySearchITContact->site = $_GET['site'];

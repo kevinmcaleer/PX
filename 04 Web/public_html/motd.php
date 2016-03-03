@@ -6,7 +6,7 @@
 
 // TODO - use MVC for motd, use the motd class
 
-	include '../delete/sc_connection.php';
+	include '../resources/config.php';
 
 	$query = "SELECT message FROM motd WHERE expiry > now()";
 	$result = $sc_connection->query($query);
@@ -23,6 +23,4 @@
 		}
 		echo '</div>' . "\n";
 	}
-	
-	
 ?>

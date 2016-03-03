@@ -39,11 +39,11 @@
   <tr>
     <td class="greybackground">&nbsp;</td>
     <td class="greybackground">
-    <p><img src="../Images/Title.png" width="226" height="51" /></p>
+    <p><img src="../public_html/img/Title.png" width="226" height="51" /></p>
     
     <div id="breadcrumbs">
     <table border="0" cellpadding="0" cellspacing="0"><tr><td>
-	<a href="../public_html/index.php">Home</a></td><td><img src="../images/navimg.png" /></td><td><a href="../services.php"> Services </a></td><td><img src="../images/navimg.png" /></td><td>Email
+	<a href="../public_html/index.php">Home</a></td><td><img src="../public_html/img/navimg.png" /></td><td><a href="../public_html/services.php"> Services </a></td><td><img src="../public_html/img/navimg.png" /></td><td>Email
 	</td></tr></table>
     </div>
     
@@ -55,7 +55,7 @@
 	?>
   <table border="1"><tr> <td bgcolor="#0054a6>"  
     <div id="account">
-<p>Welcome <a href="../account.php">Kevin</a>, <a href="../logout.php">Logout </a></p></div><div id="search"><form action="../SearchResults.php" method="GET" name="searchform"><p> Search </p><input type="text" name="search" class="tb"/><input type="submit"></form></div>
+<p>Welcome <a href="../account.php">Kevin</a>, <a href="../logout.php">Logout </a></p></div><div id="search"><form action="../public_html/SearchResults.php" method="GET" name="searchform"><p> Search </p><input type="text" name="search" class="tb"/><input type="submit"></form></div>
    </td></tr></table>
    
     <p>&nbsp;</p></td>

@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include 'resources/includes/header.inc.php';
-include 'resources/includes/navigation.inc.php';
+include '../resources/includes/header.inc.php';
+include '../resources/includes/navigation.inc.php';
 
 echo '<script language="JavaScript" type="text/javascript">
 		  <!--
@@ -16,7 +16,7 @@ echo '<script language="JavaScript" type="text/javascript">
 	
 	// grab an IT contact object to play with
 	
-	include 'resources/class/class_ITContact.php';
+	include '../resources/class/class_ITContact.php';
 	$myITContact = new ITContact();
 	
 	// Find my IT Contact
@@ -69,6 +69,6 @@ echo '<script language="JavaScript" type="text/javascript">
 	echo '</div>';
 
 
-include 'resources/includes/footer.inc.php';
+include '../resources/includes/footer.inc.php';
 
 ?>

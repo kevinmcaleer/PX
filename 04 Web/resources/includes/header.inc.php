@@ -3,9 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><?php echo $page_title; ?></title>
-<link href="../css/core.css" rel="stylesheet" type="text/css" />
+<link href="css/core.css" rel="stylesheet" type="text/css" />
 
 <?php
+include '../resources/config.php';
 include INCLUDES_PATH . 'linkscript.inc.php';
 
 ?>
@@ -19,7 +20,7 @@ include INCLUDES_PATH . 'linkscript.inc.php';
 <tr><td align="left" bgcolor="#0054A6">
 <div id="navigation">
 <ul>
-<li><a href="../resources/Includes/index.php">Home</a></li> 
+<li><a href="../index.php">Home</a></li> 
 <?php
 // check if the user is an administrator
 
@@ -27,8 +28,8 @@ include INCLUDES_PATH . 'linkscript.inc.php';
 	{
 	// echo $_SESSION['id'];
 
-	require_once('../../Includes/connection.php');
-	require_once('../../Includes/class_Contact.php');
+	// require_once('../../Includes/connection.php');
+	require_once('../includes/class/class_Contact.php');
 	$usr = new Contact();
 	$usr->load($_SESSION['id']);
 	if ($usr->level=='A')
@@ -129,12 +130,12 @@ function hideLayer(whichLayer)
 -->
 </script>
 <div id="search">
-<form name="search" action="../../Includes/searchsuggest.php" method="get" target="searchWindow">
+<form name="search" action="searchsuggest.php" method="get" target="searchWindow">
 <p>Search: <input type="text" name="search" onkeyup="this.form.submit()" class="tb" autocomplete="off" onfocus="javascript:toggleLayer('suggest')" /></p>
 <input type="submit" />
 </form>
 <div id="suggest">
-<iframe name="searchWindow" src="../../Includes/searchsuggest.php" width="300" frameborder="0" height="400" scrolling="auto"></iframe>
+<iframe name="searchWindow" src="../resources/includes/searchsuggest.php" width="300" frameborder="0" height="400" scrolling="auto"></iframe>
 </div>
 
 </td>
