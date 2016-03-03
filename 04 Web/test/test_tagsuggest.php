@@ -4,19 +4,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
-<link href="Includes/core.css" rel="stylesheet" type="text/css" />
+<link href="../Includes/core.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
 <div id="message">
 
-<form action="tagsuggest.php" method="get" name="tagform" target="searchwindow">
+<form action="../tagsuggest.php" method="get" name="tagform" target="searchwindow">
 Add tag: <input type="hidden" name="search" onkeyup="this.form.submit()" autocomplete="off"/>
 </form>
 </div>
 
-<iframe src="tagsuggest.php" height="100" width="200" name="searchwindow"></iframe>
+<iframe src="../tagsuggest.php" height="100" width="200" name="searchwindow"></iframe>
 
 
 </body>

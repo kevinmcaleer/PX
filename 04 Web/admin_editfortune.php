@@ -29,7 +29,7 @@ if(isset($_SESSION['id']))
 	if($usr->level == 'A')
 	{
 		include 'includes/adminnav.inc.php';
-		require_once 'class_fortune.php';
+		require_once 'resources/library/class_fortune.php';
 		$myFortune = new Fortune();
 		
 		// process any delete requests

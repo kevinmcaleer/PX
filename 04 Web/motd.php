@@ -4,6 +4,8 @@
 
 // Message Of The Day
 
+// TODO - use MVC for motd, use the motd class
+
 	include 'sc_connection.php';
 
 	$query = "SELECT message FROM motd WHERE expiry > now()";

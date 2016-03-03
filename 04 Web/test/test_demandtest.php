@@ -8,8 +8,8 @@
 	setcookie('formid', 1);
 	session_start();
 	
-	require 'includes/header.inc.php';
-	require 'includes/navigation.inc.php';
+	require '../includes/header.inc.php';
+	require '../includes/navigation.inc.php';
 	
 	echo '<script language="JavaScript" type="text/javascript">
 	<!--
@@ -22,8 +22,8 @@
 	
 	--></script>';
 	
-	require_once 'class_Form.php';
-	require_once 'class_Request.php';
+	require_once '../class_Form.php';
+	require_once '../class_Request.php';
 	
 	// create a new request
 	$myRequest = new Request();
@@ -86,5 +86,5 @@
 	
 	echo '</div>'; // close message div tag
 	
-	require 'includes/footer.inc.php';
+	require '../includes/footer.inc.php';
 ?>

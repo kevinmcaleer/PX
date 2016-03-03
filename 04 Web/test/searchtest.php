@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
-<link href="Includes/core.css" rel="stylesheet" type="text/css" />
+<link href="../Includes/core.css" rel="stylesheet" type="text/css" />
 </head>
 
 <script language="JavaScript" type="text/javascript">
@@ -30,7 +30,7 @@ function toggleLayer( whichLayer)
 
 <body>
 <div id="searchbox">
-<form name="search" action="searchsuggest.php" method="get" target="searchWindow">
+<form name="search" action="../searchsuggest.php" method="get" target="searchWindow">
 Search: <input type="text" name="search" onkeyup="this.form.submit()" class="tb" autocomplete="off" onfocus="javascript:toggleLayer('suggest')" onblur="javascript:toggleLayer('suggest')" />
 <input type="submit" /
 
@@ -38,8 +38,8 @@ Search: <input type="text" name="search" onkeyup="this.form.submit()" class="tb"
 </div>
 
 <div id="suggest">
-<iframe name="searchWindow" src="searchsuggest.php" width="300"  frameborder="0"></iframe></div>
-<p><a href="class_Search.php" target="_top">test</a></p>
+<iframe name="searchWindow" src="../searchsuggest.php" width="300"  frameborder="0"></iframe></div>
+<p><a href="../class_Search.php" target="_top">test</a></p>
 <p>&nbsp; </p>
 </body>
 </html>

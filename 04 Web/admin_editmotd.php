@@ -29,7 +29,7 @@ if(isset($_SESSION['id']))
 	if($usr->level == 'A')
 	{
 		include 'includes/adminnav.inc.php';
-		include 'class_motd.php';
+		include 'resources/library/class_motd.php';
 		$myMotd = new Motd();
 		
 		// process any delete requests
