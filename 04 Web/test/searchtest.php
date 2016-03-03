@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
-<link href="../Includes/core.css" rel="stylesheet" type="text/css" />
+<link href="../public_html/css/core.css" rel="stylesheet" type="text/css" />
 </head>
 
 <script language="JavaScript" type="text/javascript">
@@ -39,7 +39,7 @@ Search: <input type="text" name="search" onkeyup="this.form.submit()" class="tb"
 
 <div id="suggest">
 <iframe name="searchWindow" src="../searchsuggest.php" width="300"  frameborder="0"></iframe></div>
-<p><a href="../class_Search.php" target="_top">test</a></p>
+<p><a href="../resources/class/class_Search.php" target="_top">test</a></p>
 <p>&nbsp; </p>
 </body>
 </html>

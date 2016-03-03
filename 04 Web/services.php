@@ -4,16 +4,16 @@
 
 session_start();
 
-include 'includes/header.inc.php';
+include 'resources/includes/header.inc.php';
 
 
-include 'class_Service.php';
+include 'resources/class/class_Service.php';
 $serviceList = new Service();
 $serviceList->loadall($myList);
 
-require 'includes/navigation.inc.php';
+require 'resources/includes/navigation.inc.php';
 
-include 'includes/service.inc.php';
+include 'resources/includes/service.inc.php';
 
 /////////////////////////////////////////////////////////////////////
 //
@@ -55,14 +55,14 @@ while ($row = pg_fetch_array($myList))
 	// display names of children
 	
 	/*
-	require_once 'class_Service.php';
-	require 'sc_connection.php';
+	require_once 'resources/class/class_Service.php';
+	require 'delete/sc_connection.php';
 	
 	$q = "SELECT * FROM service WHERE parent =". $row['id'];
 	$r = pg_query($sc_connection, $q);
 	*/
 	
-	require_once 'class_Service.php';
+	require_once 'resources/class/class_Service.php';
 	$myChild = new Service();
 	$myChild->load($row['id']);
 	// $myChild->show();
@@ -109,6 +109,6 @@ echo "</table>\n";
 echo "</form>\n";
 echo "</div>\n";
 
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 
 ?>

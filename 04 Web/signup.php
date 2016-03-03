@@ -6,7 +6,7 @@
 
 session_start();
 
-include 'includes/header.inc.php';
+include 'resources/includes/header.inc.php';
 
 // format the header area
 echo '<table height="70" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td>&nbsp;</td></tr></table>';
@@ -57,6 +57,6 @@ echo '
 
 </div>';
 }
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 
 ?>

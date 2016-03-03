@@ -5,7 +5,7 @@
 if(isset($_POST['applicationlink']))
 {
 	//echo 'app id is:';
-	require 'class_Application.php';
+	require 'resources/class/class_Application.php';
 	$myApp = new Application();
 	$myApp->load($_POST['applicationlink']);
 	
@@ -18,9 +18,9 @@ if(isset($_POST['applicationlink']))
 	// $myApp->show();
 	
 	session_start();
-	include 'includes/header.inc.php';
+	include 'resources/includes/header.inc.php';
 	include 'Apps/'. $myApp->baseurl . "/" . $myApp->url;
-	include 'includes/footer.inc.php';
+	include 'resources/includes/footer.inc.php';
 }
 
 else

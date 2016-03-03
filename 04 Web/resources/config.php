@@ -12,11 +12,12 @@
  
 $config = array(
     "db" => array(
-        "db1" => array(
-            "dbname" => "database1",
-            "username" => "dbUser",
-            "password" => "pa$$",
-            "host" => "localhost"
+        "sc" => array(
+            "dbname" => "servicepoint",
+            "username" => "spdb",
+            "password" => "service",
+            "host" => "localhost",
+			"dsn" => ""  	
         ),
         "db2" => array(
             "dbname" => "database2",
@@ -35,7 +36,9 @@ $config = array(
             "layout" => $_SERVER["DOCUMENT_ROOT"] . "/images/layout"
         )
     )
+	
 );
+$config['db']['sc']['dsn'] = "mysql:host=". $config['db']['sc']['host'] . ";" . $config['db']['sc']['dbname'];
  
 /*
     I will usually place the following in a bootstrap file or some type of environment
@@ -47,11 +50,11 @@ $config = array(
     Creating constants for heavily used paths makes things a lot easier.
     ex. require_once(LIBRARY_PATH . "Paginator.php")
 */
-defined("LIBRARY_PATH")
-    or define("LIBRARY_PATH", realpath(dirname(__FILE__) . '/library'));
-     
-defined("TEMPLATES_PATH")
-    or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
+defined("LIBRARY_PATH")   || define("LIBRARY_PATH",  '../library/'));
+defined('INCLUDES_PATH')  || define ("INCLUDES_PATH", '../resources/includes/');
+defined("CLASS_PATH")     || define("CLASS_PATH", '../resources/class'));
+defined("RESOURCES")      || define("RESOURCES",  '../resources/'));     
+defined("TEMPLATES_PATH") ||  define("TEMPLATES_PATH", '../templates/'));
  
 /*
     Error reporting.
@@ -59,4 +62,13 @@ defined("TEMPLATES_PATH")
 ini_set("error_reporting", "true");
 error_reporting(E_ALL|E_STRCT);
  
+echo 'setting connection'; 
+try {
+	$sc_connection = new PDO($config['db']['sc']['dsn'], $config['db']['sc']['username'], $config['db']['sc']['password']);
+	$sc_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	}
+catch (PDOException $ex)
+	{
+    die('Error : ' . $ex->getMessage());
+ 	}
 ?>

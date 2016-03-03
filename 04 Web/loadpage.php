@@ -8,7 +8,7 @@ session_start();
 
 if(isset($_POST['page']))
 {
-	// include 'includes/header.inc.php';
+	// include 'resources/includes/header.inc.php';
 	$page_str = $_POST['page'];
 	//echo $page_str;
 	
@@ -17,7 +17,7 @@ if(isset($_POST['page']))
 	
 	// echo '<iframe src="' . $page_str. '" width="100%" hieght="100%"></iframe>';
 	
-	//include 'includes/footer.inc.php';
+	//include 'resources/includes/footer.inc.php';
 }
 else
 {

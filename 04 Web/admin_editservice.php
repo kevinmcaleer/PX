@@ -5,8 +5,8 @@
 // for editing services
 
 session_start();
-include 'includes/header.inc.php';
-include 'includes/navigation.inc.php';
+include 'resources/includes/header.inc.php';
+include 'resources/includes/navigation.inc.php';
 
 if(isset($_POST['serviceid']))
 {
@@ -18,7 +18,7 @@ if(isset($_POST['serviceid']))
 		if(isset($_POST['submitted']))
 		{
 			
-			include_once 'class_Service.php';
+			include_once 'resources/class/class_Service.php';
 			$myService = new Service();
 			$myService->load($_POST['serviceid']);
 			$myService->name = $_POST['name'];
@@ -51,7 +51,7 @@ if(isset($_POST['serviceid']))
 			  </script>' . "\n";
 	
 			// echo $_POST['serviceid'];
-			include_once 'class_Service.php';
+			include_once 'resources/class/class_Service.php';
 			$myService = new Service();
 			$myService->load($_POST['serviceid']);
 			// $myService->show();
@@ -160,7 +160,7 @@ if(isset($_POST['serviceid']))
 			
 			// get a list of service images
 			
-			require_once 'class_Service.php';
+			require_once 'resources/class/class_Service.php';
 			$imageList = new Service();
 			$images = $imageList->getImages();
 			while($iRow = pg_fetch_array($images))
@@ -189,7 +189,7 @@ if(isset($_POST['serviceid']))
 			
 			
 			
-			include 'includes/request_info.inc.php';
+			include 'resources/includes/request_info.inc.php';
 			echo "</td></tr>\n";
  			echo "</table>\n <!-- Laout Table 1 End-->";
 		}
@@ -204,6 +204,6 @@ if(isset($_POST['serviceid']))
 	
 }
 
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 
 ?>

@@ -4,7 +4,7 @@
 
 // Edit the Requests for a specific Service
 session_start();
-include 'includes/header.inc.php';
+include 'resources/includes/header.inc.php';
 
 // check if someone is logged on
 
@@ -34,12 +34,12 @@ if(isset($_SESSION['id']))
 	// first check if the logged on user is an administrator
 	if($usr->level == 'A')
 	{
-		include 'includes/Navigation.inc.php';
-		require_once 'class_request.php';
+		include 'resources/includes/navigation.inc.php';
+		require_once 'resources/class/class_Request.php';
 		$myRequest = new Request();
 		
 		// get the current service from the service id
-		require_once 'class_Service.php';
+		require_once 'resources/class/class_Service.php';
 		$myService = new Service();
 		$myService->load($_POST['serviceid']);
 		
@@ -120,6 +120,6 @@ else
 {
 	require 'login_required.php';
 }
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 ?>
 

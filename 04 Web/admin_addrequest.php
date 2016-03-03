@@ -4,8 +4,8 @@
 
 session_start();
 
-include 'includes/header.inc.php';
-include 'includes/navigation.inc.php';
+include 'resources/includes/header.inc.php';
+include 'resources/includes/navigation.inc.php';
 
 	// Breadcrumbs
 	//echo '<div id="breadcrumbs">';
@@ -17,7 +17,7 @@ if (isset($_POST['request']))
 {
 	// echo 'service added, ' . $_POST['request'];
 	
-	require 'sc_connection.php';
+	require 'delete/sc_connection.php';
 	$query = "INSERT INTO request (name, description, serviceid) VALUES ('" . $_POST['name'] . "',' " . $_POST['description'] . "'," . $_POST['serviceid']. ")";
 	// echo $query;
 	$result = pg_query($sc_connection, $query) or die("Update Failed, $query");
@@ -31,7 +31,7 @@ else
 if (isset($_SESSION['id']))
 {
 	// get the current service from the service id
-	require_once 'class_Service.php';
+	require_once 'resources/class/class_Service.php';
 	$myService = new Service();
 	$myService->load($_POST['serviceid']);
 	
@@ -74,6 +74,6 @@ else
 {
 	include 'login_required.php';
 }
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 
 ?>

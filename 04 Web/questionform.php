@@ -1,6 +1,6 @@
 <html>
 <body>
-<link href="Includes/core.css" rel="stylesheet" type="text/css">
+<link href="public_html/css/core.css" rel="stylesheet" type="text/css">
 
 <?php
 
@@ -12,7 +12,7 @@
 
 if(isset($_COOKIE['formid']))
 {
-	require 'class_Question.php';
+	require 'resources/class/class_Question.php';
 	
 	echo '<script language="JavaScript" type="text/javascript">
 	<!--
@@ -48,7 +48,7 @@ if(isset($_COOKIE['formid']))
 	// just display the form
 }	
 	
-	require_once 'class_Form.php';
+	require_once 'resources/class/class_Form.php';
 	$myForm = new Form();
 	$myForm->load($_COOKIE['formid']);
 

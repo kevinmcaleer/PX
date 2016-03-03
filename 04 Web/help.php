@@ -6,10 +6,10 @@
 
 session_start();
 
-include 'includes/header.inc.php';
+include 'resources/includes/header.inc.php';
 if(isset($_SESSION['id']))
 {
-	include 'includes/navigation.inc.php';
+	include 'resources/includes/navigation.inc.php';
 	
 	echo '<div class="message">';
 	echo '<h1>Help</h1><br />';
@@ -17,7 +17,7 @@ if(isset($_SESSION['id']))
 	
 	// include the help hmtl page
 	
-	include 'includes/help.inc.html';
+	include 'resources/includes/help.inc.html';
 	
 	echo '</p>';
 	echo '</div>';
@@ -28,5 +28,5 @@ else
 	login_required.php;
 }
 
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 ?>

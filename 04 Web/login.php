@@ -7,11 +7,11 @@ if (isset($_POST['submitted']))
 
 	// Need the database connection:
 
-	require_once ('connection.php');
+	require_once ('delete/connection.php');
 	
 	// For processing the login:
 
-	require_once('includes/login_functions.inc.php');
+	require_once('resources/includes/login_functions.inc.php');
 	
 
 	// Check the login:
@@ -59,9 +59,9 @@ if (isset($_POST['submitted']))
 
 session_start();
 
-// include 'includes/header.inc.php';
-include 'includes/login_page.inc.php';
-// include 'includes/footer.inc.php';
+// include 'resources/includes/header.inc.php';
+include 'resources/includes/login_page.inc.php';
+// include 'resources/includes/footer.inc.php';
 
 
 ?>

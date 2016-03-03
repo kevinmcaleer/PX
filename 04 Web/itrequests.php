@@ -6,11 +6,11 @@
 
 session_start();
 
-include 'includes/header.inc.php';
+include 'resources/includes/header.inc.php';
 
 if(isset($_SESSION['id']))
 {
-	include 'includes/navigation.inc.php';
+	include 'resources/includes/navigation.inc.php';
 	
 	echo '<div class="message">';
 	echo '<h1>IT Requests</h1><br />';
@@ -18,15 +18,15 @@ if(isset($_SESSION['id']))
 	// if the user has requested 
 	if(isset($_POST['requestid']))
 	{
-		require_once 'class_Request.php';
+		require_once 'resources/class/class_Request.php';
 		$myRequest = new Request();
 		$myRequest->load($_POST['requestid']);
 		
 		echo '<div class="message">';
 		echo '<p>You are about to make a request for:<p>';
 		$myRequest->show();
-		require_once 'sc_connection.php';
-		require_once 'class_Contact.php';
+		require_once 'delete/sc_connection.php';
+		require_once 'resources/class/class_Contact.php';
 		$me = new Contact();
 		$me->load($_SESSION['id']);
 		echo '</div>';
@@ -45,6 +45,6 @@ else
 }
 
 
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 
 ?>

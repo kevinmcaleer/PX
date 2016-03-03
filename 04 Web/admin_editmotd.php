@@ -4,7 +4,7 @@
 
 // Edit the Message Of the Day
 session_start();
-include 'includes/header.inc.php';
+include 'resources/includes/header.inc.php';
 
 // check if someone is logged on
 
@@ -28,8 +28,8 @@ if(isset($_SESSION['id']))
 	// first check if the logged on user is an administrator
 	if($usr->level == 'A')
 	{
-		include 'includes/adminnav.inc.php';
-		include 'resources/library/class_motd.php';
+		include 'resources/includes/adminnav.inc.php';
+		include 'resources/class/class_motd.php';
 		$myMotd = new Motd();
 		
 		// process any delete requests
@@ -108,5 +108,5 @@ else
 {
 	require 'login_required.php';
 }
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 ?>

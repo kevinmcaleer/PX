@@ -4,7 +4,7 @@
 
 session_start();
 
-include 'includes/header.inc.php';
+include 'resources/includes/header.inc.php';
 
 if(isset($_SESSION['id']))
 {
@@ -12,7 +12,7 @@ if(isset($_SESSION['id']))
 	// show the accounts page for the current user
 	echo '<h1>My Account</h1>';
 	
-	include 'includes/account_page.inc.php';
+	include 'resources/includes/account_page.inc.php';
 	
 } // otherswise show an error msg
 else
@@ -21,6 +21,6 @@ else
 
 }
 
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 
 ?>

@@ -1,8 +1,8 @@
-<link href="Includes/core.css" rel="stylesheet" type="text/css">
+<link href="public_html/css/core.css" rel="stylesheet" type="text/css">
 
 <?php
 
-// Addclass_Tag.php
+// Addresources/class/class_Tag.php
 
 // adds tags from the servicepage
 
@@ -10,7 +10,7 @@ $tagged = FALSE;
 if(isset($_POST['tag']))
 {
 	// add the tag
-	include 'class_Tag.php';
+	include 'resources/class/class_Tag.php';
 	$myTag = new Tag();
 	$name = $_POST['tag'];
 	$myTag->name = $name;

@@ -4,7 +4,7 @@
 
 // Edit the Fortune
 session_start();
-include 'includes/header.inc.php';
+include 'resources/includes/header.inc.php';
 
 // check if someone is logged on
 
@@ -28,8 +28,8 @@ if(isset($_SESSION['id']))
 	// first check if the logged on user is an administrator
 	if($usr->level == 'A')
 	{
-		include 'includes/adminnav.inc.php';
-		require_once 'resources/library/class_fortune.php';
+		include 'resources/includes/adminnav.inc.php';
+		require_once 'resources/class/class_fortune.php';
 		$myFortune = new Fortune();
 		
 		// process any delete requests
@@ -97,5 +97,5 @@ else
 {
 	require 'login_required.php';
 }
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 ?>

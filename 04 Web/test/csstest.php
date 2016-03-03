@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
-<link href="../Includes/core.css" rel="stylesheet" type="text/css" />
+<link href="../public_html/css/core.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 <!--
 .tb {
@@ -23,7 +23,7 @@
   <tr>
     <td bgcolor="#0054A6"><div id="navigation">
 <ul>
-<li><a href="../index.php">Home</a></li>
+<li><a href="../public_html/index.php">Home</a></li>
 <li><a href="">Item 1</a></li>
 <li><a href="">Item 2</a></li>
 <li><a href="">Item 3</a></li>
@@ -43,14 +43,14 @@
     
     <div id="breadcrumbs">
     <table border="0" cellpadding="0" cellspacing="0"><tr><td>
-	<a href="../index.php">Home</a></td><td><img src="../images/navimg.png" /></td><td><a href="../services.php"> Services </a></td><td><img src="../images/navimg.png" /></td><td>Email
+	<a href="../public_html/index.php">Home</a></td><td><img src="../images/navimg.png" /></td><td><a href="../services.php"> Services </a></td><td><img src="../images/navimg.png" /></td><td>Email
 	</td></tr></table>
     </div>
     
 	
 	<?php 
 	
-	include '../includes/navigation.inc.php';
+	include '../resources/includes/navigation.inc.php';
 	
 	?>
   <table border="1"><tr> <td bgcolor="#0054a6>"  
@@ -70,5 +70,5 @@
 
 <?php
 
-include '../includes/footer.inc.php';
+include '../resources/includes/footer.inc.php';
 ?>

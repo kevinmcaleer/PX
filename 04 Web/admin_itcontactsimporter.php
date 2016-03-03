@@ -5,8 +5,8 @@
 // Imports IT contacts from a CSV file (from sharepoint)
 
 session_start();
-include 'includes/header.inc.php';
-include 'includes/navigation.inc.php';
+include 'resources/includes/header.inc.php';
+include 'resources/includes/navigation.inc.php';
 
 if (isset($_SESSION['id']))
 {
@@ -40,7 +40,7 @@ if (isset($_SESSION['id']))
 			{
 			
 				// clear the itcontacts table
-				require 'class_ITContact.php';
+				require 'resources/class/class_ITContact.php';
 				$itContact = new ITContact();
 				$itContact->clear();
 				
@@ -126,7 +126,7 @@ else
 	include 'login_required.php';
 }
 
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 
 
 ?>

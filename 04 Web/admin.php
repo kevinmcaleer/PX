@@ -5,8 +5,8 @@
 // Allows user management, service, request management.
 
 session_start();
-include 'includes/header.inc.php';
-include 'includes/adminnav.inc.php';
+include 'resources/includes/header.inc.php';
+include 'resources/includes/adminnav.inc.php';
 
 if (isset($_SESSION['id']))
 {
@@ -27,6 +27,6 @@ else
 	include 'login_required.php';
 }
 
-include 'includes/footer.inc.php';
+include 'resources/includes/footer.inc.php';
 
 ?>
