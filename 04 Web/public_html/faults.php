@@ -19,7 +19,7 @@ if(isset($_SESSION['id']))
 	echo '<div id="fault">';
 	echo '<div class="message">';
 	echo '<table><tr><td>';	
-	echo '<img src="images/laptop.png" width="64" class="icon"/></td><td>';
+	echo '<img src="img/laptop.png" width="64" class="icon"/></td><td>';
 	echo '<h1>Report a Fault</h1><br />';
 	echo '</td></tr></table>';
 	echo '</div>';

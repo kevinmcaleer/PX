@@ -1,5 +1,5 @@
 <base target="_top">
-<link href="../../public_html/css/core.css" rel="stylesheet" type="text/css">
+<link href="css/core.css" rel="stylesheet" type="text/css">
 
 <script language="JavaScript" type="text/javascript">
 <!--
@@ -22,7 +22,7 @@ if(isset($_GET['search']))
 	echo '<form name="suggestform" action="servicepage.php" method="POST">';
 	echo '<input type="hidden" name="serviceid">';
 	
-	include '../class/class_Search.php';
+	include '../resources/class/class_Search.php';
 	$mySearchService = new SearchService();
 	$mySearchRequest = new SearchRequest();
 	$mySearchITContact = new SearchITContact();
@@ -35,7 +35,7 @@ if(isset($_GET['search']))
 
 		echo '<div class="suggestions"><h2>Services</h2></div>';
 		echo '<table width="100%" cellspacing="0" cellpadding="2" border="0">';
-		while ($row = pg_fetch_array($myResults))
+		while ($row = $myResults->fetch(PDO::FETCH_ASSOC))
 		{	
 			echo '<tr><td width="32">';
 			echo '<a href="javascript:openlink(' . $row['id'] . ')" target="_top">';
@@ -67,7 +67,7 @@ if(isset($_GET['search']))
 		
 		echo '<div class="suggestions"><h2>Requests</h2></div>';
 		
-		while ($row = pg_fetch_array($myResults))
+		while ($row = $myResults->fetch(PDO::FETCH_ASSOC))
 		{
 			echo '<a href="javascript:openlink(' . $row['id'] . ')" target="_top">';
 			echo $row['name'];
@@ -88,7 +88,7 @@ if(isset($_GET['search']))
 		// Search for an IT contact
 		echo '<div class="suggestions"><h2>IT Contacts</h2></div>';
 		
-		while($row = pg_fetch_array($myResults))
+		while($row = $myResults->fetch(PDO::FETCH_ASSOC))
 		{
 			echo $row['firstname'] . " ";
 			echo $row['lastname'] . " ";

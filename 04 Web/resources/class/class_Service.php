@@ -22,9 +22,10 @@ class Service
 		$query = "SELECT * FROM service WHERE id = $serviceid";
 		$result = $sc_connection->query($query);
 		
-		if (pg_num_rows($result) == 1)
+		
+		if ($result->rowCount() > 0)
 		{
-			$row = pg_fetch_array($result);
+			$row = $result->fetch(PDO::FETCH_ASSOC);
 			$this->id = $row['id'];
 			$this->name = $row['name'];
 			$this->description = $row['description'];
@@ -73,7 +74,7 @@ class Service
 
 	public function getChildren()
 	{
-		require '../../delete/sc_connection.php';
+		require '../resources/config.php';
 		$query = "SELECT id, name, description, responsibilities, restrictions FROM service WHERE parent = " . $this->id;
 		$result = $sc_connection->query($query);
 		
@@ -83,7 +84,7 @@ class Service
 	// saves changes to the current service
 	public function save()
 	{
-		require '../../delete/sc_connection.php';
+		require '../resources/config.php';
 	
 		$query = "UPDATE service SET name = '" .  $this->name . "' , description = " . "'" . $this->description . "'" . ", parent = "  ;
 		
@@ -107,15 +108,15 @@ class Service
 		$query = $query . " WHERE id = ".  $this->id;
 		
 		//echo $query;
-		$result = pg_query($sc_connection, $query) or die("there was a problem running the update query" . $query);
+		$result = $sc_connection->query($query) or die("there was a problem running the update query" . $query);
 	}
 	
 	public function getImages()
 	{
 		// require_once 'class_Service.php';
-		require  '../../delete/sc_connection.php';
+		require '../resources/config.php';
 		$query = 'SELECT image FROM service WHERE image IS NOT NULL GROUP BY image';
-		$result = pg_query($sc_connection, $query);
+		$result = $sc_connection->query($query);
 		return $result;
 	
 	}

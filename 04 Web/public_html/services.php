@@ -33,7 +33,7 @@ echo '<form action="servicepage.php" name="serviceform" method="POST">
 <input type="hidden" name="serviceid" />'  . "\n";
 
 echo '<table width="100%" border="0">';
-while ($row = $myList->fetchall(PDO::FETCH_ASSOC))
+while ($row = $myList->fetch(PDO::FETCH_ASSOC))
 {
 	echo "<tr>\n";
 	echo '<td class="ServiceStrip">';
@@ -72,7 +72,7 @@ while ($row = $myList->fetchall(PDO::FETCH_ASSOC))
 	
 	$bit = FALSE;
 	$first = TRUE;
-	while ($children = pg_fetch_array($serviceChildren))
+	while ($children = $serviceChildren->fetch(PDO::FETCH_ASSOC))
 	{
 		if($bit == FALSE)
 		{

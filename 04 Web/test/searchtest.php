@@ -30,7 +30,7 @@ function toggleLayer( whichLayer)
 
 <body>
 <div id="searchbox">
-<form name="search" action="../resources/includes/SearchSuggest.php" method="get" target="searchWindow">
+<form name="search" action="../public_html/SearchSuggest.php" method="get" target="searchWindow">
 Search: <input type="text" name="search" onkeyup="this.form.submit()" class="tb" autocomplete="off" onfocus="javascript:toggleLayer('suggest')" onblur="javascript:toggleLayer('suggest')" />
 <input type="submit" /
 
@@ -38,7 +38,7 @@ Search: <input type="text" name="search" onkeyup="this.form.submit()" class="tb"
 </div>
 
 <div id="suggest">
-<iframe name="searchWindow" src="../resources/includes/SearchSuggest.php" width="300"  frameborder="0"></iframe></div>
+<iframe name="searchWindow" src="../public_html/SearchSuggest.php" width="300"  frameborder="0"></iframe></div>
 <p><a href="../resources/class/class_Search.php" target="_top">test</a></p>
 <p>&nbsp; </p>
 </body>

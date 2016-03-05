@@ -17,7 +17,7 @@ if(isset($_SESSION['id']))
 	echo '<div class="message">';
 	echo '<table border="0" cellspacing="0" cellpadding="0">';
 	echo '<tr><td>';
-	echo '<img src="images/info.png" width="64" class="icon" />';
+	echo '<img src="img/info.png" width="64" class="icon" />';
 	echo '</td><td>';
 	echo '<h1>Information</h1><br />';
 	echo '</td></tr></table>';

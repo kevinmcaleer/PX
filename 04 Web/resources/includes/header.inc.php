@@ -130,7 +130,7 @@ function hideLayer(whichLayer)
 -->
 </script>
 <div id="search">
-<form name="search" action="searchsuggest.php" method="get" target="searchWindow">
+<form name="search" action="../../public_html/SearchSuggest.php" method="get" target="searchWindow">
 <p>Search: <input type="text" name="search" onkeyup="this.form.submit()" class="tb" autocomplete="off" onfocus="javascript:toggleLayer('suggest')" /></p>
 <input type="submit" />
 </form>

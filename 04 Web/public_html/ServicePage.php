@@ -7,20 +7,20 @@
 if (isset($_POST['serviceid']))
 {
 	session_start();
-	require_once('delete/connection.php');
-	require_once('resources/class/class_Contact.php');
+	require_once('../delete/connection.php');
+	require_once('../resources/class/class_Contact.php');
 	$usr = new Contact();
 	$usr->load($_SESSION['id']);
 	
 	setcookie('serviceid',$_POST['serviceid']);
 	
-	include 'resources/includes/header.inc.php';
-	include 'resources/includes/navigation.inc.php';
+	include '../resources/includes/header.inc.php';
+	include '../resources/includes/navigation.inc.php';
 	
 	if(isset($_POST['submitted']))
 		{
 			
-			include 'resources/class/class_Service.php';
+			include '../resources/class/class_Service.php';
 			$myService = new Service();
 			$myService->load($_POST['serviceid']);
 			$myService->name = $_POST['name'];
@@ -123,7 +123,7 @@ if (isset($_POST['serviceid']))
 	{
 	
  // Load the current service
- include_once 'resources/class/class_Service.php';
+ include_once '../resources/class/class_Service.php';
  //echo $_POST['serviceid'];
  $myService = new Service();
  $myService->load($_POST['serviceid']);
@@ -192,7 +192,7 @@ if (isset($_POST['serviceid']))
    
  // display any related children service
  
- include 'resources/includes/service.inc.php';
+ include '../resources/includes/service.inc.php';
  echo '<div class="message">';
  echo '<h2>Related Services</h2><br />';
  
@@ -236,7 +236,7 @@ if (isset($_POST['serviceid']))
  echo '<p>tags:</p>';
  
  // create a tag object
- include 'resources/class/class_Tag.php';
+ include '../resources/class/class_Tag.php';
  $myTag = new Tag();
  $tagrow = $myTag->loadAllForService($myService->id);
  $first = TRUE;
@@ -293,7 +293,7 @@ if (isset($_POST['serviceid']))
 	</script>';
 
 
- include 'resources/includes/request_info.inc.php';
+ include '../resources/includes/request_info.inc.php';
 
  
  // Close the page layout table tags
@@ -306,10 +306,10 @@ if (isset($_POST['serviceid']))
 else
 {
 	session_start();
-	include 'resources/includes/header.inc.php';
-	include 'resources/includes/login_required.php';
+	include '../resources/includes/header.inc.php';
+	include '../resources/includes/login_required.php';
 
 }
 
-include 'resources/includes/footer.inc.php';
+include '../resources/includes/footer.inc.php';
 ?>
