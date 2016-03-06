@@ -7,7 +7,7 @@
 if (isset($_POST['serviceid']))
 {
 	session_start();
-	require_once('../delete/connection.php');
+	require_once('../resources/config.php');
 	require_once('../resources/class/class_Contact.php');
 	$usr = new Contact();
 	$usr->load($_SESSION['id']);
@@ -77,7 +77,7 @@ if (isset($_POST['serviceid']))
 						}
 						else
 						*/
-						if(move_uploaded_file($_FILES['image']['tmp_name'], __dir__ . "/Images/{$_FILES['image']['name']}"))
+						if(move_uploaded_file($_FILES['image']['tmp_name'], __dir__ . "/img/{$_FILES['image']['name']}"))
 						{
 							// echo '<p><em>The file has been uploaded!</em></p>';
 							
@@ -211,7 +211,7 @@ if (isset($_POST['serviceid']))
  $children = $myService->getChildren();
  
  $first = TRUE;
- while($childrow = pg_fetch_array($children))
+ while($childrow = $children->fetch(PDO::FETCH_ASSOC))
  
  {
  	if($first == TRUE)
@@ -244,7 +244,7 @@ if (isset($_POST['serviceid']))
  echo '<form name="tagsearchform" method="GET" action="searchresults.php" >';
  echo '<input type="hidden" name="search" />';
  echo '</form>';
- while($row = pg_fetch_array($tagrow))
+ while($row = $tagrow->fetch(PDO::FETCH_ASSOC))
  {
  	$tag = $row['name'];
 	$tag = ucfirst(strtolower($tag));
@@ -268,7 +268,7 @@ if (isset($_POST['serviceid']))
  	if($usr->level='A')
  	{
 	
-		echo '<p align="right"><img src="images/edit.png" /><a onclick="javascript:toggleLayer('. "'tagedit'" . ' )">Add Tag<a/></p>';
+		echo '<p align="right"><img src="img/edit.png" /><a onclick="javascript:toggleLayer('. "'tagedit'" . ' )">Add Tag<a/></p>';
 		echo '<div id="tagedit"';
 		echo '<iframe name="tageditform" src="admin_addtag.php" frameborder="0" width="505"></iframe>';
 		echo '</div>';

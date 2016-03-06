@@ -53,7 +53,7 @@ class Service
 	// loads all services into an array
 	public function loadallservices()
 	{
-		require '../../delete/sc_connection.php';
+		require '../resources/config.php';
 		$query = "SELECT id, name, description, parent, image FROM service ORDER BY name ASC";
 		$result = $sc_connection->query($query);
 		return $result;

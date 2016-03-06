@@ -45,6 +45,8 @@ class SearchService
 			//$result = $sc_connection->query($query);
  			return $result;
 		}
+		else
+		echo 'Type something to search for';
 	}
 }
 

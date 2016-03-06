@@ -5,8 +5,8 @@
 // for editing services
 
 session_start();
-include 'resources/includes/header.inc.php';
-include 'resources/includes/navigation.inc.php';
+include '../resources/includes/header.inc.php';
+include '../resources/includes/navigation.inc.php';
 
 if(isset($_POST['serviceid']))
 {
@@ -18,29 +18,21 @@ if(isset($_POST['serviceid']))
 		if(isset($_POST['submitted']))
 		{
 			
-			include_once 'resources/class/class_Service.php';
+			include_once '../resources/class/class_Service.php';
 			$myService = new Service();
 			$myService->load($_POST['serviceid']);
 			$myService->name = $_POST['name'];
 			$myService->description = $_POST['description'];
 			$myService->parent = $_POST['parent'];
 			$myService->save();
-			echo '<div class="message"><p>Changes Saved</p></div>';
-			
-			// reload services page?
-
-					
-		
-			
+			echo '<div class="message"><p>Changes Saved</p></div>';		
+			// reload services page?		
 		}
-		else
-		
+		else		
 		*/
 		{
 			echo '<table width="100%" cellspacing="0" cellpadding="0" border="0">' . "\n <!-- Layout Table-->"; // create a table for layout 
  			echo '<tr><td valign="top">' . "\n";
-			
-		
 			echo '<script language="JavaScript" type="text/javascript">
 			  <!--
 			  function saveform ()
@@ -51,7 +43,7 @@ if(isset($_POST['serviceid']))
 			  </script>' . "\n";
 	
 			// echo $_POST['serviceid'];
-			include_once 'resources/class/class_Service.php';
+			include_once '../resources/class/class_Service.php';
 			$myService = new Service();
 			$myService->load($_POST['serviceid']);
 			// $myService->show();
@@ -62,22 +54,14 @@ if(isset($_POST['serviceid']))
  			echo '<tr><td valign="top">' . "\n";
  
 			echo '<form enctype="multipart/form-data" name="editserviceform" method="POST" action="servicepage.php">' . "\n";
-			echo '<input type="hidden" name="MAX_FILE_SIZE" value="30000" />';
+			echo '<input type="hidden" name="MAX_FILE_SIZE" value="300000" />';
 			echo '<input type="hidden" name="serviceid" value="'. $myService->id .'"/>' . "\n";
 			echo '<input type="hidden" name="submitted">' . "\n";
 			
 			 // Display the service heading
  			echo '<div id="editservicedetails">' . "\n";
-			echo '<table width="100%" border="0" cellpadding="0" cellspacing="0">' . "\n  <!-- Layout Table 3-->"; // service layout
-			
-			
+			echo '<table width="100%" border="0" cellpadding="0" cellspacing="0">' . "\n  <!-- Layout Table 3-->"; // service layout		
 			echo '<tr><td valign="top">' . "\n";
-		
-			
-			
-			
-			
-		
 			echo '<div class="servicename">' . "\n";
 			echo 'Edit: ' . "\n";
 			echo '<input type="text" name="name" value="'. $myService->name .'" class="tb"/><br />';
@@ -115,7 +99,7 @@ if(isset($_POST['serviceid']))
 			
 			$options = new Service();
 			$optionrow = $options->loadallservices();
-			while($myRow = pg_fetch_array($optionrow))
+			while($myRow = $optionrow->fetch(PDO::FETCH_ASSOC))
 			{
 				//$myRow->show();
 				echo '<option value = "' . $myRow['id'] . '"';
@@ -124,21 +108,16 @@ if(isset($_POST['serviceid']))
 				//echo 'Row ID: '. $row['id'];
 				if ($myRow['id'] == $myService->parent)
 				{
-					
-				
 					echo 'selected="' . $myRow['parent'] . '"';
 				}
-				
 				echo '>';
 				echo $myRow['name'];
 				echo '</option>' . "\n";
 			}
 			
 			echo '</select>';
-			
 			echo '</div>' . "\n";
 			echo '</p>' . "\n";
-			
 			
 			/// Restrictions
 			
@@ -160,10 +139,10 @@ if(isset($_POST['serviceid']))
 			
 			// get a list of service images
 			
-			require_once 'resources/class/class_Service.php';
+			require_once '../resources/class/class_Service.php';
 			$imageList = new Service();
 			$images = $imageList->getImages();
-			while($iRow = pg_fetch_array($images))
+			while($iRow = $images->fetch(PDO::FETCH_ASSOC))
 			{
 				echo '<option value="' . $iRow['image'] . '" ';
 				
@@ -173,23 +152,15 @@ if(isset($_POST['serviceid']))
 					echo 'selected="' . $iRow['image'] . '"';
 				}
 				echo  '>' . $iRow['image'] . '</option>';
-			}
-					
+			}		
 			echo '</select>';
 			echo '</div>';
-			
-			
-			
-			
 			echo '</form>' . "\n";
-			
 			//echo '</td>';
 			echo "</td></tr>\n";
  			echo "</table>\n <!-- Layout Table 2 End -->" ;
-			
-			
-			
-			include 'resources/includes/request_info.inc.php';
+		
+			include '../resources/includes/request_info.inc.php';
 			echo "</td></tr>\n";
  			echo "</table>\n <!-- Laout Table 1 End-->";
 		}
@@ -204,6 +175,6 @@ if(isset($_POST['serviceid']))
 	
 }
 
-include 'resources/includes/footer.inc.php';
+include '../resources/includes/footer.inc.php';
 
 ?>

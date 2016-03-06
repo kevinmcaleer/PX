@@ -32,9 +32,18 @@ echo '<div id="servicelist">' . "\n";
 echo '<form action="servicepage.php" name="serviceform" method="POST">
 <input type="hidden" name="serviceid" />'  . "\n";
 
-echo '<table width="100%" border="0">';
+include '../resources/class/class_card.php';
+//echo '<table width="100%" border="0">';
+echo '<div class="cards">';
 while ($row = $myList->fetch(PDO::FETCH_ASSOC))
 {
+	$mycard = new Card;
+	$mycard->imageurl = $row['image'];
+	$mycard->title = $row['name'];
+	$mycard->description = $row['description'];
+	$mycard->url = 'javascript:loadservice('. "'" . $row['id']. "'" .')';
+	$mycard->show();
+	/*
 	echo "<tr>\n";
 	echo '<td class="ServiceStrip">';
 	echo '<table>';
@@ -50,7 +59,7 @@ while ($row = $myList->fetch(PDO::FETCH_ASSOC))
 	echo $row['description'];
 	echo "</p> \n";
 	
-	
+	*/
 	//echo '<p>';
 	
 	// display names of children
@@ -77,7 +86,7 @@ while ($row = $myList->fetch(PDO::FETCH_ASSOC))
 		if($bit == FALSE)
 		{
 			$bit = TRUE;
-			echo '<BR />';
+			//echo '<BR />';
 		}
 		if($first==TRUE)
 		{
@@ -86,27 +95,27 @@ while ($row = $myList->fetch(PDO::FETCH_ASSOC))
 		}	
 		else
 		{
-			echo " | ";
+		//	echo " | ";
 		}
 		
 		// create a hyperlink to open the selected service
 		echo '<a class="ServiceLineDescription" href="javascript:loadservice('. "'". $children['id'] . "'". ')">';
 		
 		echo $children['name'];
-		
-		
 		echo "</a>\n";
 	}
 	
-	echo '</td></tr></table>';
+	//echo '</td></tr></table>';
+	
 	//echo '</p>';
 	//echo '<p class="ServiceLineDescription">';
 	//echo $row['description'];
 	//echo "</p>\n";
-	echo "</td>\n";
-	echo "</tr>\n";
+	//echo "</td>\n";
+	//echo "</tr>\n";
 }
-echo "</table>\n";
+//echo "</table>\n";
+echo '</div>'; // close the cards div
 echo "</form>\n";
 echo "</div>\n";
 

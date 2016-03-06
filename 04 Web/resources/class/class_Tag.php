@@ -16,9 +16,9 @@ class Tag
 		
 		// check that no other tag with this name already exists
 		$query = "SELECT name, id  FROM tag WHERE name = '" . $this->name . "'";
-		include '../../delete/sc_connection.php';
-		$result = pg_query($sc_connection, $query) or die("problem with query, $query");
-		if (pg_num_rows($result) == 0)
+		include '../resources/config.php';
+		$result = $sc_connection->query($query) or die("problem with query, $query");
+		if ($result->rowcount() == 0)
 		{
 			$query = "INSERT INTO tag (name) VALUES ('" . $this->name . "')";
 			include '../../delete/sc_connection.php';
@@ -88,7 +88,7 @@ class Tag
 	
 	public function loadAllForService($serviceid)
 	{
-		include '../../delete/sc_connection.php';
+		include '../resources/config.php';
 		$query = '
 		SELECT tag.id, tag.name, service_tag_link.tag_id, service_tag_link.service_id 
 		FROM tag, service_tag_link, service
@@ -96,7 +96,7 @@ class Tag
 		AND service_tag_link.tag_id = tag.id
 		AND service_tag_link.service_id = ' . $serviceid . " ORDER BY tag.name ASC";
 		
-		$result = pg_query($sc_connection, $query);
+		$result = $sc_connection->query($query);
 		return $result;
 	}
 }

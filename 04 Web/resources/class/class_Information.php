@@ -17,25 +17,25 @@ class Information
 
 	public function load($infid)
 	{
-		include '../../delete/sc_connection.php';
+		include '../resources/config.php';
 		$query = "SELECT id, name, filepath, url, type, description, category_id FROM information WHERE id = $infid";
-		$result = pg_query($sc_connection, $query);
+		$result = $sc_connection->query($query);
 
 	}
 
 	public function getAllForService($serviceid)
 	{
-		include '../../delete/sc_connection.php';
+		include '../resources/config.php';
 		$query = "SELECT id, name, type, category_id, filepath, description, url, category_id FROM information WHERE id = $serviceid";
-		$result = pg_query($sc_connection, $query);
+		$result = $sc_connection->query($query);
 		return $result;
 	}
 
 	public function save()
 	{
-		include '../../delete/sc_connection.php';
+		include '../resources/config.php';
 		$query = "INSERT INTO information (name, filepath, url, type, category_id, description) VALUES ('$this->name', '$this->filepath', '$this->url', '$this->type', $this->category_id, '$this->description')";
-		$result = pg_query($sc_connection, $query) or die('There was a problem inserting the data');
+		$result = $sc_connection->query($query) or die('There was a problem inserting the data');
 	}
 
 } // close the class definition

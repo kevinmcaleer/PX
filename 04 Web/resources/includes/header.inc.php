@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><?php echo $page_title; ?></title>
 <link href="css/core.css" rel="stylesheet" type="text/css" />
+<link href="css/cardui.css" rel="stylesheet" type="text/css" />
 
 <?php
 include '../resources/config.php';
@@ -130,12 +131,12 @@ function hideLayer(whichLayer)
 -->
 </script>
 <div id="search">
-<form name="search" action="../../public_html/SearchSuggest.php" method="get" target="searchWindow">
+<form name="search" action="SearchSuggest.php" method="get" target="searchWindow">
 <p>Search: <input type="text" name="search" onkeyup="this.form.submit()" class="tb" autocomplete="off" onfocus="javascript:toggleLayer('suggest')" /></p>
 <input type="submit" />
 </form>
 <div id="suggest">
-<iframe name="searchWindow" src="../resources/includes/searchsuggest.php" width="300" frameborder="0" height="400" scrolling="auto"></iframe>
+<iframe name="searchWindow" src="SearchSuggest.php" width="300" frameborder="0" height="400" scrolling="auto"></iframe>
 </div>
 
 </td>

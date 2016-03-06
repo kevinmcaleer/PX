@@ -11,7 +11,7 @@
  echo '<td  valign="top" width="200">'; // the requests section of the table
  echo '<div id="requests">';
  
- include '../../Includes/class_Request.php';
+ include '../resources/class/class_Request.php';
  $myRequests = new Request();
  // $myRequests->load($myService->id);
  $rows = $myRequests->getAll($myService->id);
@@ -29,7 +29,7 @@
  echo "</td>\n";
  echo "</tr>\n";
  
- while ($row = pg_fetch_array($rows))
+ while ($row = $rows->fetch(PDO::FETCH_ASSOC))
  {
  	echo "<tr>";
 	echo '<td class="requestline">' . "\n";
@@ -86,26 +86,21 @@ echo '</form>';
 	}
  echo "</table> <!-- requests table -->\n";
  echo '</div>' . "\n";
- 
- 
+  
  // The Information section
  
-
  echo '<div class="message">';
  echo '<p>Information</p><br />';
  
- require_once '../../Includes/class_information.php';
+ require_once '../resources/class/class_information.php';
  $myInformation = new Information(); // create a new Info object
  $infolist = $myInformation->getAllForService($myService->id);
- while($row = pg_fetch_array($infolist))
+ while($row = $infolist->fetch(PDO::FETCH_ASSOC))
  {
  	echo '<div id="information">';
 	echo '<p class="requestline"><a href="information/' . $row['filepath']. '" target="_blank">' . $row['name'] . "</a></p> \n";
 	echo '</div>'; // close information div tag
  }
- 
- 
-
  
  if ($usr->level=='A')
  {

@@ -1,4 +1,4 @@
-<link href="public_html/css/core.css" rel="stylesheet" type="text/css">
+<link href="css/core.css" rel="stylesheet" type="text/css">
 
 <?php
 
@@ -10,7 +10,7 @@ $tagged = FALSE;
 if(isset($_POST['tag']))
 {
 	// add the tag
-	include 'resources/class/class_Tag.php';
+	include '../resources/class/class_Tag.php';
 	$myTag = new Tag();
 	$name = $_POST['tag'];
 	$myTag->name = $name;
@@ -46,7 +46,7 @@ function tagsearch ()
 Add tag: <input type="text" name="tag" onkeyup="tagsearch()" autocomplete="off"/>
 </form>
 
-<form action="tagsuggest.php" method="get" name="searchsug" target="searchwindow">
+<form action="../tagsuggest.php" method="get" name="searchsug" target="searchwindow">
 <input type="hidden" name="search" autocomplete="off"/ onKeyUp="this.form.submit()">
 </form>
 </div>
@@ -64,5 +64,5 @@ Add tag: <input type="text" name="tag" onkeyup="tagsearch()" autocomplete="off"/
 ?>
 </td></tr>
 <tr><td>
-<iframe src="tagsuggest.php" height="75" width="200" name="searchwindow" frameborder="0"></iframe>
+<iframe src="../tagsuggest.php" height="75" width="200" name="searchwindow" frameborder="0"></iframe>
 </td></tr></table>
