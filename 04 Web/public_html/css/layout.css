@@ -1,0 +1,111 @@
+/* @override http://localhost/px/public_html/css/layout.css */
+
+/* CSS Document */
+
+div.topmenu {
+	display: block;
+	background-color: rgba(0,74,128,1.00);
+	height: 50px;
+	position: relative;
+}
+
+div.title {
+	display: inline;
+	width: 100%;
+	position: absolute;
+	top: 4px;
+	left: 256px;
+	font-family: lato;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-style: normal;
+	font-weight: 300;
+}
+
+body {
+	margin-left: 0;
+	margin-top: 0;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+div.hotdogmenu {
+	width: 64px;
+	height: 64px;
+	position: relative;
+	display: inline;
+	left: 0;
+	top: 0;
+	align-content: center;
+	vertical-align: middle;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+div.user {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-family: lato;
+	color: white;
+	height: 32px;
+	padding-top: 4px;
+	padding-right: 10px;
+	display: inline;
+	font-style: normal;
+	font-weight: 300;
+}
+div.help {
+	position: absolute;
+	height: 32px;
+	width: 32px;
+	top: 0px;
+	right: 160px;
+	border-width: 1px;
+	border-color: white;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	color: white;
+	text-align: center;
+	padding-top: 6px;
+	border-right: 1px solid white;
+	border-left: 1px solid white;
+}
+div.productname {
+	font-family: lato;
+	color: white;
+	border-right: 1px solid white;
+	border-left: 1px solid white;
+	position: relative;
+	left: 0px;
+	margin-right: 10px;
+	margin-left: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	top: 0px;
+	margin-top: 0px;
+	text-align: center;
+	vertical-align: middle;
+	height: 64px;
+	display: inline-block;
+	font-style: normal;
+	font-weight: 400;
+	width: 200px;
+}
+div.sidebar {
+	background-color: rgba(95,95,95,1.00);
+	width: 250px;
+	color: rgba(255,255,255,1.00);
+	text-align: center;
+	font-family: lato;
+	font-style: normal;
+	font-weight: 400;
+	height: 100%;
+}
+div.page {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
