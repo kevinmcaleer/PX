@@ -17,10 +17,12 @@ include INCLUDES_PATH . 'user.php';
 </div>
 <div class="container">
 <div class="sidebar">
+<div class="sidebarcontent">
   <?php
 include INCLUDES_PATH . 'motd.php'; 					// display the message of the day
 include INCLUDES_PATH . 'fortune.php';
 ?>
+</div> <!-- sidebar content-->
 </div> <!-- sidebar -->
 <div class="two_column">
   <?php

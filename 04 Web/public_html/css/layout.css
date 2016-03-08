@@ -253,14 +253,26 @@ div.user p {
 	width: auto;
 }
 
-div.sidebar {
-	background-color: rgba(95,95,95,1.00);
-	width: 250px;
+.sidebarcontent {
+	margin-top: 50px;;
 	color: rgba(255,255,255,1.00);
 	text-align: center;
 	font-family: lato;
 	font-style: normal;
-	font-weight: 400;
-	height: 100%;
-	position: absolute;
+	font-weight: 400;	
 }
+
+/* @group Sidebar */
+
+.sidebar {
+	background-color: rgba(95,95,95,1.00);
+	width: 250px;
+	
+	position: absolute;
+	top: 0;
+	margin-top: 0px;
+	height: 100%;
+	z-index: -1;
+}
+
+/* @end */
