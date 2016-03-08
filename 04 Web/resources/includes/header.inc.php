@@ -143,7 +143,8 @@ function hideLayer(whichLayer)
 <tr>
 <?php 
 // check if the user is logged in, if so display the Pending Approvals section
-echo '<td width="200" valign="top">
+?>
+<td width="200" valign="top">
 <table width="180" border="0" cellpadding="4" cellspacing="4">
 <tr><td align="centre">
 <div id="logo">
@@ -156,17 +157,6 @@ echo '<td width="200" valign="top">
 My Local IT Contact
 <p><a href="myitcontact.php">Click here to find my local IT Contact</a></p>
 </div>
-';
-// Fortune
-echo '<div id="fortune">';
-echo '<div class="message">';
-require_once '../resources/class/class_fortune.php';
-$myFortune = new Fortune();
-echo '<p>Did You Know?</p>';
-echo "<em>" . '"' . $myFortune->getRandom() . '"' ."</em>";
-echo '</div>'; // close fortune
-echo '</div>'; // close fortune
-?>
 </td><tr>
 </table>
 </td>

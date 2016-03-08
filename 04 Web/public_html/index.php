@@ -10,15 +10,30 @@ $GLOBALS['home'] = getcwd();
 include '../resources/config.php';
 include INCLUDES_PATH . 'header.html';
 include INCLUDES_PATH . 'user.php';
-echo '<div class="div container">';
-include INCLUDES_PATH . 'sidebar.html';
-echo '<div class="two_column">';
-include INCLUDES_PATH . 'navigation.html';	// load the navigation bar
-include 'motd.php'; 					// display the message of the day
-echo '</div>';
-include 'servicecat.php';				// load servicecat.php (which loads the frontpage.htm
+?>
 
-echo '</div>';
+<div class="title">
+  <p>Dashboard</p>
+</div>
+<div class="container">
+<div class="sidebar">
+  <?php
+include INCLUDES_PATH . 'motd.php'; 					// display the message of the day
+include INCLUDES_PATH . 'fortune.php';
+?>
+</div> <!-- sidebar -->
+<div class="two_column">
+  <?php
+include INCLUDES_PATH . 'navigation.html';	// load the navigation bar
+?>
+
+<?php
+include 'servicecat.php';				// load servicecat.php (which loads the frontpage.htm
+?>
+</div>
+</div>
+<?php
+//echo '</div>';
 include INCLUDES_PATH . 'footer.html'; // load the footer
 
 ?>

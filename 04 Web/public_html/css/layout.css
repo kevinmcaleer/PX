@@ -2,26 +2,6 @@
 
 /* CSS Document */
 
-div.topmenu {
-	display: block;
-	background-color: rgba(0,74,128,1.00);
-	height: 50px;
-	position: relative;
-}
-
-div.title {
-	display: inline;
-	width: 100%;
-	position: absolute;
-	top: 4px;
-	left: 256px;
-	font-family: lato;
-	color: white;
-	margin-left: 10px;
-	margin-right: 10px;
-	font-style: normal;
-	font-weight: 300;
-}
 html ,body{
 	margin-left: 0;
 	margin-top: 0;
@@ -32,6 +12,34 @@ html ,body{
 	position: relative;
 }
 
+div.page {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/* @group Header */
+
+div.topmenu {
+	display: block;
+	background-color: rgba(0,74,128,1.00);
+	height: 50px;
+	position: relative;
+}
+
+div.title {
+	display: inline;
+	width: auto;
+	position: absolute;
+	top: 8px;
+	left: 256px;
+	font-family: lato;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-style: normal;
+	font-weight: 300;
+}
 div.hotdogmenu {
 	width: 50px;
 	height: 50px;
@@ -40,7 +48,7 @@ div.hotdogmenu {
 	left: 0;
 	top: 0;
 	vertical-align: middle;
-	border-right: 1px solid rgba(255,255,255,1.00);
+	border-right: 1px solid rgba(255,255,255,0.50);
 }
 .hotdogmenu img  {
 	margin-left: auto;
@@ -74,11 +82,14 @@ div.help {
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 	color: white;
 	text-align: center;
-	border-right: 1px solid white;
-	border-left: 1px solid white;
+	border-right: 1px solid rgba(255, 255, 255, 0.5);
+	border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 div.help p {
 }
+
+/* @group Product Name */
+
 div.productname {
 	font-family: lato;
 	color: white;
@@ -96,18 +107,152 @@ div.productname {
 	margin-right: auto;
 	text-align: center;
 	vertical-align: middle;
-	border-right: 1px solid rgba(255,255,255,1.00);
+	border-right: 1px solid rgba(255, 255, 255, 0.51);
 }
 div.productname p {
 	vertical-align: middle;
 	margin-top: 8px;
 }
+
+/* @end */
+
 div.title p {
 	margin-top: 8px;
 }
 div.user p {
 	margin-top: 8px;
 }
+
+/* @end */
+
+.container {
+	margin: 0px 0px 0;
+	/*padding: 0;*/
+	width:100%;
+	/*position: relative;*/
+	/*height: 100%;*/
+}
+/* @group Footer
+ */
+
+/* footer */
+.footer {
+	height: 30px;
+	margin:0px; auto;
+	padding: 0;
+	text-align:center;
+	width:100%;
+	font-family: lato;
+	font-weight: 300;
+	font-size: 10pt;
+	text-decoration: none;
+	position: absolute;
+	left:0;
+	background: rgba(255, 255, 255, 0.5);
+	clear: both;
+	bottom: 0;
+}
+.footer p {
+	color: #0054a6;
+	margin: 5px;
+	padding: 0px;
+}
+.footer a {
+	color: #0054A6;
+	text-decoration: none;
+}
+
+/* @end */
+
+/* @group Navigation */
+.page {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.nav {
+	background-color: hsl(0, 0%, 97%);
+	height: 50px;
+	width: 100%;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+.nav ul{
+	padding-top: 13px;
+	padding-left: 10px;
+}
+
+.nav ul li {
+	/*width: 200px;*/
+	display: inline-block;
+	/*background: red;*/
+	font: 11pt lato;
+	font-weight: 300;
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.nav ul li a {
+	text-decoration: none;
+	color: black;
+	display: block;
+}
+
+/* @end */
+
+/* @group Fortune */
+
+.fortune {
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	padding-bottom: 20px;
+	font-family: lato;
+	font-size: 14pt;
+	font-weight: 300;
+}
+.fortune em {
+	font-size: 10pt;
+	font-weight: 400;
+}
+.fortune p {
+	margin: 10px;
+}
+
+/* @end */
+
+/* @group MOTD */
+
+.motd {
+	margin: 0px;
+	padding-top: 0px;
+	padding-bottom: 20px;
+	font-size: 10pt;
+	font-weight: 400;
+	
+}
+
+.motd h2 {
+	margin: 0px;
+	padding-top: 10px;;
+	font-family: lato;
+	font-weight: 300;
+	font-size: 14pt;
+	height: 40px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* @end */
+.two_column {
+	position: relative;
+	/*background-color: yellow;*/
+	top: 0;
+	right: 0;
+	height: 100%;
+	margin-left: 250px;
+	width: auto;
+}
+
 div.sidebar {
 	background-color: rgba(95,95,95,1.00);
 	width: 250px;
@@ -117,9 +262,5 @@ div.sidebar {
 	font-style: normal;
 	font-weight: 400;
 	height: 100%;
-}
-div.page {
-	position: relative;
-	width: 100%;
-	height: 100%;
+	position: absolute;
 }

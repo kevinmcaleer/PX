@@ -6,15 +6,15 @@
 
 // TODO - use MVC for motd, use the motd class
 
-	include '../resources/config.php';
+	include '../config.php';
 
 	$query = "SELECT message FROM motd WHERE expiry > now()";
 	$result = $sc_connection->query($query);
 	
 	if($result->rowCount() > 0)
 	{
-		echo '<div class="message">', "\n";
-		echo '<h2>Message of the day</h2><br />';
+		echo '<div class="motd">', "\n";
+		echo '<h2>Message Centre</h2><br />';
 		while($motd = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			//print_r($motd);
