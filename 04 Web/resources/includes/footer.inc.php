@@ -1,7 +1,5 @@
 <?php
-
-// Footer.php
-
+ // footer.php
 
 ?>
 </td>

@@ -12,6 +12,6 @@ include INCLUDES_PATH . 'header.inc.php';
 include INCLUDES_PATH . 'navigation.inc.php';	// load the navigation bar
 include 'motd.php'; 					// display the message of the day
 include 'servicecat.php';				// load servicecat.php (which loads the frontpage.htm
-include INCLUDES_PATH . 'footer.inc.php';
+include INCLUDES_PATH . 'footer.html'; // load the footer
 
 ?>
