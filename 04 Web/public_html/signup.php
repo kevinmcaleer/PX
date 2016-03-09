@@ -22,7 +22,7 @@ if(isset($_POST['usersignup']))
 	
 	
 	$header = 'MIME-Version: 1.0' . "\n" . 'Content-type: text/plain; charset=UTF-8' . "\n" ;
-	$from = 'no-reply@sellafieldsites.com';
+	$from = 'no-reply@sellafieldsites.com'; // TODO CHANGE THIS TO BE TENANT SPECIFIC
 	$cc = 'CC: kevinmcaleer@me.com';
 	$from = 'FROM: IT Service Catalogue <' . $from . '>' . "\n" . $cc;
 	$from = $header . $from;

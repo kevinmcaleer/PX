@@ -58,10 +58,9 @@ div.hotdogmenu {
 	margin-bottom: auto;
 }
 
-div.user {
-	position: absolute;
-	top: 0;
-	right: 0;
+/* @group User Login */
+
+.user {
 	font-family: lato;
 	color: white;
 	height: 50px;
@@ -70,8 +69,45 @@ div.user {
 	display: inline;
 	font-style: normal;
 	font-weight: 300;
+	text-decoration:none;
+	position: absolute;
+	top: 0px;
+	right: 0px;
 }
-div.help {
+
+.user p {
+	margin-top: 8px;
+}
+
+.user p a {
+	position: absolute;
+	color: white;
+	text-decoration: none;
+	right: 100px;
+}
+
+.username {
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	background:yellow;
+	margin-top: 8px;
+}
+.username a {
+	position: absolute;
+	right: 0px;
+	color: white;
+	text-decoration: none;
+	font-family: lato;
+	font-weight: 300;
+	padding-top: 4px;
+}
+
+/* @end */
+
+
+.help {
 	position: absolute;
 	height: 50px;
 	width: 50px;
@@ -85,12 +121,12 @@ div.help {
 	border-right: 1px solid rgba(255, 255, 255, 0.5);
 	border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
-div.help p {
+.help p {
 }
 
 /* @group Product Name */
 
-div.productname {
+.productname {
 	font-family: lato;
 	color: white;
 	position: absolute;
@@ -109,20 +145,16 @@ div.productname {
 	vertical-align: middle;
 	border-right: 1px solid rgba(255, 255, 255, 0.51);
 }
-div.productname p {
+.productname p {
 	vertical-align: middle;
 	margin-top: 8px;
 }
 
 /* @end */
 
-div.title p {
+.title p {
 	margin-top: 8px;
 }
-div.user p {
-	margin-top: 8px;
-}
-
 /* @end */
 
 .container {
@@ -276,3 +308,4 @@ div.user p {
 }
 
 /* @end */
+

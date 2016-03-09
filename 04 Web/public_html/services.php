@@ -25,7 +25,7 @@ echo '<table cellspacing="0" cellpadding="0"><tr><td >';
 echo '<img src="img/services.png" width="64" class="icon"/></td><td>';
 echo '<h1>Service List</h1><br />';
 // TODO rename to tenant name
-echo '<p>Below is a list of services available to users of the Sellafield Ltd computer network. Click on a service to see more information or to make a request.</p>';
+echo '<p>Below is a list of services available to users of the <TENTANT NAME> computer network. Click on a service to see more information or to make a request.</p>';
 echo '</td></tr></table>';
 echo '</div>';
 echo '<div id="servicelist">' . "\n";

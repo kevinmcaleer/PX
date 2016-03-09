@@ -13,10 +13,10 @@ global $sc_connection;
 $config = array(
     "db" => array(
         "sc" => array(
-            "dbname" => "servicepoint",
-            "username" => "spdb",
-            "password" => "service",
-            "host" => "localhost",
+            "dbname" => "servicepointdb",
+            "username" => "servicepointdb",
+            "password" => "Horsefoot28!",
+            "host" => "servicepointdb.db.11221321.hostedresource.com",
 			"dsn" => ""  	
         ),
         "db2" => array(
@@ -27,13 +27,13 @@ $config = array(
         )
     ),
     "urls" => array(
-        "baseUrl" => "http://example.com"
+        "baseUrl" => "http://www.servicepoint.online"
     ),
     "paths" => array(
         "resources" => "/path/to/resources",
         "images" => array(
-            "content" => $_SERVER["DOCUMENT_ROOT"] . "/images/content",
-            "layout" => $_SERVER["DOCUMENT_ROOT"] . "/images/layout"
+            "content" => $_SERVER["DOCUMENT_ROOT"] . "/img/content",
+            "layout" => $_SERVER["DOCUMENT_ROOT"] . "/img/layout"
         )
     )
 	
