@@ -12,7 +12,7 @@ if(!isset($_SESSION['id'])) {
 
 // Need the function to create an absolute URL:
 
-require_once ('resources/includes/login_functions.inc.php');
+require_once ('../resources/includes/login_functions.inc.php');
 
 $url = absolute_url();
 
@@ -34,7 +34,7 @@ setcookie('PHPSESSID','',time()-3600,'/','',0,0); // destroy the cookie
 
 $page_title = "Logged Out";
 
-include ('resources/includes/header.inc.php');
+include ('../resources/includes/header.inc.php');
 
 // format the header area
 echo '<table height="70" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td>&nbsp;</td></tr></table>';
@@ -46,6 +46,6 @@ echo "<h2>Logged Out</h2><br />";
 echo "<p>You are now logged out.</p>";
 echo '</div>';
 
-include ('resources/includes/footer.inc.php');
+include ('../resources/includes/footer.inc.php');
 
 ?>
