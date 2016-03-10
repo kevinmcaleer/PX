@@ -22,8 +22,8 @@
 	
 	--></script>';
 	
-	require_once '../resources/class/class_Form.php';
-	require_once '../resources/class/class_Request.php';
+	require_once '../resources/class/class_form.php';
+	require_once '../resources/class/class_request.php';
 	
 	// create a new request
 	$myRequest = new Request();

@@ -1,11 +1,16 @@
 /* @override 
-	http://localhost/px/public_html/css/cardui.css */
+	http://localhost/px/public_html/css/cardui.css
+	http://www.servicepoint.online/css/cardui.css */
 
 @charset "UTF-8";
 /* CSS Document */
 
 .cards {
 	width:100%;
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	clear: both;
 }
 .card {
 	position: relative;
@@ -14,17 +19,19 @@
 	height: 250px;
 	margin: 10px;
 	padding: 10px;
-	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+	/*-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);*/
+	/*box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);*/
 	-moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 	opacity: 1;
 	text-decoration:none;
 	border: 1px solid white;
+	float: left;
+	background-color: white;
 }
 
 .card:hover {
 	border: 1px solid orange;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 	transition: border 0.5s;
 	transition: box-shadow 0.5s;
 }
@@ -67,4 +74,8 @@
 	font-weight: 400;
 	color: gray;
 	text-decoration:none;
+}
+
+div.cards a {
+	text-decoration: none;
 }

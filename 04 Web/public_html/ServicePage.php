@@ -8,19 +8,41 @@ if (isset($_POST['serviceid']))
 {
 	session_start();
 	require_once('../resources/config.php');
-	require_once('../resources/class/class_Contact.php');
+	require_once('../resources/class/class_contact.php');
 	$usr = new Contact();
-	$usr->load($_SESSION['id']);
+	if (isset($_SESSION['id']))
+	{
+		$usr->load($_SESSION['id']);	
+	}
+	else
+	{
+		setcookie('serviceid',$_POST['serviceid']);
+	}
+	include '../resources/includes/header.html';
+	include '../resources/includes/navigation.html';
+	include INCLUDES_PATH . 'user.php';
+?>
+
+<div class="title">
+  <p>Services</p>
+</div>
+<div class="container">
+<div class="sidebar">
+<div class="sidebarcontent">
+  <?php
+include INCLUDES_PATH . 'motd.php'; 					// display the message of the day
+include INCLUDES_PATH . 'fortune.php';
+?>
+</div> <!-- sidebar content-->
+</div> <!-- sidebar -->
+<div class="two_column">
+<?php	
 	
-	setcookie('serviceid',$_POST['serviceid']);
-	
-	include '../resources/includes/header.inc.php';
-	include '../resources/includes/navigation.inc.php';
 	
 	if(isset($_POST['submitted']))
 		{
 			
-			include '../resources/class/class_Service.php';
+			include '../resources/class/class_service.php';
 			$myService = new Service();
 			$myService->load($_POST['serviceid']);
 			$myService->name = $_POST['name'];
@@ -123,7 +145,7 @@ if (isset($_POST['serviceid']))
 	{
 	
  // Load the current service
- include_once '../resources/class/class_Service.php';
+ include_once '../resources/class/class_service.php';
  //echo $_POST['serviceid'];
  $myService = new Service();
  $myService->load($_POST['serviceid']);
@@ -236,7 +258,7 @@ if (isset($_POST['serviceid']))
  echo '<p>tags:</p>';
  
  // create a tag object
- include '../resources/class/class_Tag.php';
+ include '../resources/class/class_tag.php';
  $myTag = new Tag();
  $tagrow = $myTag->loadAllForService($myService->id);
  $first = TRUE;
@@ -311,5 +333,8 @@ else
 
 }
 
-include '../resources/includes/footer.inc.php';
+?>
+</div>
+<?php
+include '../resources/includes/footer.html';
 ?>

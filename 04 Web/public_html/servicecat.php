@@ -7,7 +7,7 @@
 $page_title = "Service Catalogue: Home";
 // session_start();
 
-// require_once '../resources/class/class_Application.php';
+// require_once '../resources/class/class_application.php';
 // $myApp = new Application();
 // $myApp->load($_COOKIE['appid']);
 

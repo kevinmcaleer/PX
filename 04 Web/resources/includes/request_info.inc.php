@@ -11,7 +11,7 @@
  echo '<td  valign="top" width="200">'; // the requests section of the table
  echo '<div id="requests">';
  
- include '../resources/class/class_Request.php';
+ include '../resources/class/class_request.php';
  $myRequests = new Request();
  // $myRequests->load($myService->id);
  $rows = $myRequests->getAll($myService->id);

@@ -1,5 +1,6 @@
 /* @override 
-	http://localhost/px/public_html/css/core.css */
+	http://localhost/px/public_html/css/core.css
+	http://www.servicepoint.online/css/core.css */
 
 @charset "UTF-8";
 /* CSS Document */
@@ -64,10 +65,10 @@ body {
 }
 
 h1 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12pt;
+	font-family: Lato ,Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
 	color: #333333;
-	font-weight: bold;
+	font-weight: 400;
 }
 .servicename {
 	font-family: Geneva, Arial, Helvetica, sans-serif;
@@ -333,20 +334,33 @@ ul.SideBarMenu li:hover, ul.SideBarMenu li.CSStoHighlight {
 	display: inline;
 }
 
+/* @group message */
+
 .message {
-	border: 1px solid #CCCCCC;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*border: 1px solid #CCCCCC;*/
+	font-family: lato, Verdana, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
-	color:#666666;
+	background-color: white;
+	margin: 0;
+	padding: 20px;
+	position: relative;
+	top: 0;
+	left: 0;
+	border: 10px solid #f3f3f3;
 }
 
-.message, .tags, .msg {
+.message h1 {
+	font-family: lato;
+	font-size: 14pt;
+	font-weight: 300;
+}
+.tags, .msg {
 	margin: 10px;
 	padding: 10px;
 	
 }
 .message p, .tags p, .msg p, #requests p a {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: lato, Verdana, Arial, Helvetica, sans-serif;
 	font-size: 9pt;
 	font-weight: normal;
 	
@@ -356,10 +370,12 @@ ul.SideBarMenu li:hover, ul.SideBarMenu li.CSStoHighlight {
 	color: #0033CC;
 	font-size: 10pt;
 	font-weight: normal;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: Lato, Verdana, Arial, Helvetica, sans-serif;
 	margin: 0px;
 	padding: 0px;
 }
+
+/* @end */
 
 .tags {
 	background-image: url(../img/tag.png);

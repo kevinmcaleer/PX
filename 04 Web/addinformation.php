@@ -42,7 +42,7 @@ if(isset($_SESSION['id']))
 		if(isset($_POST['submitted']))
 		{
 			// process the uploaded file and save the information to the database
-			require_once 'resources/class/class_Information.php';
+			require_once 'resources/class/class_information.php';
 			$myInfo = new Information();
 			$myInfo->name = $_POST['name'];
 			$myInfo->description = $_POST['description'];
@@ -69,7 +69,7 @@ if(isset($_SESSION['id']))
 			// Create information form
 				
 			echo '<div class="message"';
-			require_once 'resources/class/class_Service.php';
+			require_once 'resources/class/class_service.php';
 			$myServ = new Service();
 			$myServ->load($_COOKIE['serviceid']);
 			echo '<h1>Add Information for the \'' . $myServ->name . '\' Service</h1><br />';

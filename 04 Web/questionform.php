@@ -12,7 +12,7 @@
 
 if(isset($_COOKIE['formid']))
 {
-	require 'resources/class/class_Question.php';
+	require 'resources/class/class_question.php';
 	
 	echo '<script language="JavaScript" type="text/javascript">
 	<!--
@@ -48,7 +48,7 @@ if(isset($_COOKIE['formid']))
 	// just display the form
 }	
 	
-	require_once 'resources/class/class_Form.php';
+	require_once 'resources/class/class_form.php';
 	$myForm = new Form();
 	$myForm->load($_COOKIE['formid']);
 

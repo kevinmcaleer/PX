@@ -12,7 +12,7 @@
 	//$searchContact = new ITContact();
 	//$searchContact->
 	
-	include '../resources/class/class_Search.php';
+	include '../resources/class/class_search.php';
 	$mySearchITContact = new SearchITContact();
 	$search = $_GET['search'];
 	$mySearchITContact->site = $_GET['site'];

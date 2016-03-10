@@ -113,7 +113,7 @@ class Service
 	
 	public function getImages()
 	{
-		// require_once 'class_Service.php';
+		// require_once 'class_service.php';
 		require '../resources/config.php';
 		$query = 'SELECT image FROM service WHERE image IS NOT NULL GROUP BY image';
 		$result = $sc_connection->query($query);

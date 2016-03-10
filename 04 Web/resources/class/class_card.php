@@ -12,7 +12,6 @@ class Card
 	public $items;
 	public $imageurl;
 	public $url;
-	
 	public function show()
 	{
 		echo '<a href="' . $this->url . '">' . "\n";
@@ -26,8 +25,7 @@ class Card
 		echo '</div>'. "\n";
 		echo '<div class="cardItems"> ' . $this->items . '</div>'. "\n";
 		echo '</div>';
-		echo '</a>';
-		
+		echo '</a>';	
 	}
 }
 ?>

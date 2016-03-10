@@ -22,7 +22,7 @@ if(isset($_GET['search']))
 	echo '<form name="suggestform" action="servicepage.php" method="POST">';
 	echo '<input type="hidden" name="serviceid">';
 	
-	include '../resources/class/class_Search.php';
+	include '../resources/class/class_search.php';
 	$mySearchService = new SearchService();
 	$mySearchRequest = new SearchRequest();
 	$mySearchITContact = new SearchITContact();

@@ -18,7 +18,7 @@ if(isset($_SESSION['id']))
 	// if the user has requested 
 	if(isset($_POST['requestid']))
 	{
-		require_once '../resources/class/class_Request.php';
+		require_once '../resources/class/class_request.php';
 		$myRequest = new Request();
 		$myRequest->load($_POST['requestid']);
 		
@@ -27,7 +27,7 @@ if(isset($_SESSION['id']))
 		$myRequest->show();
 		//require_once '../delete/sc_connection.php';
 		require_once '../resources/config.php';
-		require_once '../resources/class/class_Contact.php';
+		require_once '../resources/class/class_contact.php';
 		$me = new Contact();
 		$me->load($_SESSION['id']);
 		echo '</div>';

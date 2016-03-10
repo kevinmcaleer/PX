@@ -62,7 +62,7 @@ class Tag
 				$row = pg_fetch_array($result);
 				$query = "INSERT INTO service_tag_link (service_id, tag_id) VALUES (" . "'" . $_COOKIE['serviceid'] . "', '" . $this->id . "')" ;
 				$result = pg_query($sc_connection, $query) or die ("Problem adding existing tag  - {$query} " );
-				//include_once 'class_Service.php';
+				//include_once 'class_service.php';
 			}
 			else
 			{

@@ -31,7 +31,7 @@ else
 if (isset($_SESSION['id']))
 {
 	// get the current service from the service id
-	require_once 'resources/class/class_Service.php';
+	require_once 'resources/class/class_service.php';
 	$myService = new Service();
 	$myService->load($_POST['serviceid']);
 	

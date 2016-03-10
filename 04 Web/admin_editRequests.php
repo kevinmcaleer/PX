@@ -35,11 +35,11 @@ if(isset($_SESSION['id']))
 	if($usr->level == 'A')
 	{
 		include 'resources/includes/navigation.inc.php';
-		require_once 'resources/class/class_Request.php';
+		require_once 'resources/class/class_request.php';
 		$myRequest = new Request();
 		
 		// get the current service from the service id
-		require_once 'resources/class/class_Service.php';
+		require_once 'resources/class/class_service.php';
 		$myService = new Service();
 		$myService->load($_POST['serviceid']);
 		

@@ -16,7 +16,7 @@ echo '<script language="JavaScript" type="text/javascript">
 	
 	// grab an IT contact object to play with
 	
-	include '../resources/class/class_ITContact.php';
+	include '../resources/class/class_itcontact.php';
 	$myITContact = new ITContact();
 	
 	// Find my IT Contact

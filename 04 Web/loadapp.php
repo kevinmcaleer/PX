@@ -5,7 +5,7 @@
 if(isset($_POST['applicationlink']))
 {
 	//echo 'app id is:';
-	require 'resources/class/class_Application.php';
+	require 'resources/class/class_application.php';
 	$myApp = new Application();
 	$myApp->load($_POST['applicationlink']);
 	

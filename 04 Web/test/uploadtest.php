@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form enctype="multipart/form-data" name="form1" method="post" action="../public_html/ServicePage.php">
+<form enctype="multipart/form-data" name="form1" method="post" action="../public_html/servicepage.php">
 Upload file<input type="file" name="image"/>
 <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 <input type="hidden" name="submitted" />

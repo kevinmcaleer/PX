@@ -30,7 +30,7 @@ if(isset($_GET['search']))
 
 	
 	
-	//require '../resources/class/class_Search.php';
+	//require '../resources/class/class_search.php';
 	//$mySearch = new Search();
 	//$search = $_GET['search'];
 	//$myResults = $mySearch->go($search);

@@ -18,7 +18,7 @@ if(isset($_POST['serviceid']))
 		if(isset($_POST['submitted']))
 		{
 			
-			include_once '../resources/class/class_Service.php';
+			include_once '../resources/class/class_service.php';
 			$myService = new Service();
 			$myService->load($_POST['serviceid']);
 			$myService->name = $_POST['name'];
@@ -43,7 +43,7 @@ if(isset($_POST['serviceid']))
 			  </script>' . "\n";
 	
 			// echo $_POST['serviceid'];
-			include_once '../resources/class/class_Service.php';
+			include_once '../resources/class/class_service.php';
 			$myService = new Service();
 			$myService->load($_POST['serviceid']);
 			// $myService->show();
@@ -139,7 +139,7 @@ if(isset($_POST['serviceid']))
 			
 			// get a list of service images
 			
-			require_once '../resources/class/class_Service.php';
+			require_once '../resources/class/class_service.php';
 			$imageList = new Service();
 			$images = $imageList->getImages();
 			while($iRow = $images->fetch(PDO::FETCH_ASSOC))

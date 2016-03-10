@@ -40,7 +40,7 @@ if (isset($_SESSION['id']))
 			{
 			
 				// clear the itcontacts table
-				require '../resources/class/class_ITContact.php';
+				require '../resources/class/class_itcontact.php';
 				$itContact = new ITContact();
 				$itContact->clear();
 				

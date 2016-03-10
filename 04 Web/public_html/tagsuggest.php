@@ -1,6 +1,6 @@
 <base target="_top">
 
-<link href="public_html/css/core.css" rel="stylesheet" type="text/css">
+<link href="css/core.css" rel="stylesheet" type="text/css">
 
 <script language="JavaScript" type="text/javascript">
 <!--
@@ -22,7 +22,7 @@ if(isset($_GET['search']))
 	echo '<form name="suggestform" action="addtag.php" method="POST">';
 	echo '<input type="hidden" name="tag">';
 	
-	include 'resources/class/class_Search.php';
+	include '../resources/class/class_search.php';
 	$mySearchTag = new SearchTag();
 	$search = $_GET['search'];
 	$mySearchTag = new SearchTag();

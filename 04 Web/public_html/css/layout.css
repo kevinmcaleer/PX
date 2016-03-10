@@ -1,4 +1,5 @@
-/* @override http://localhost/px/public_html/css/layout.css */
+/* @override http://localhost/px/public_html/css/layout.css
+	http://www.servicepoint.online/css/layout.css */
 
 /* CSS Document */
 
@@ -158,11 +159,14 @@ div.hotdogmenu {
 /* @end */
 
 .container {
-	margin: 0px 0px 0;
+	margin: 0;
 	/*padding: 0;*/
 	width:100%;
-	/*position: relative;*/
-	/*height: 100%;*/
+	position: relative;
+	height: 100%;
+	padding: 0;
+	position: relative;
+	top: 0;
 }
 /* @group Footer
  */
@@ -261,7 +265,6 @@ div.hotdogmenu {
 	padding-bottom: 20px;
 	font-size: 10pt;
 	font-weight: 400;
-	
 }
 
 .motd h2 {
@@ -277,7 +280,7 @@ div.hotdogmenu {
 /* @end */
 .two_column {
 	position: relative;
-	/*background-color: yellow;*/
+	background-color: #f3f3f3;
 	top: 0;
 	right: 0;
 	height: 100%;
@@ -286,12 +289,13 @@ div.hotdogmenu {
 }
 
 .sidebarcontent {
-	margin-top: 50px;;
+	/*margin-top: 50px;;*/
 	color: rgba(255,255,255,1.00);
 	text-align: center;
 	font-family: lato;
 	font-style: normal;
 	font-weight: 400;	
+	position: relative;
 }
 
 /* @group Sidebar */
@@ -299,7 +303,6 @@ div.hotdogmenu {
 .sidebar {
 	background-color: rgba(95,95,95,1.00);
 	width: 250px;
-	
 	position: absolute;
 	top: 0;
 	margin-top: 0px;
