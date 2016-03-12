@@ -334,48 +334,7 @@ ul.SideBarMenu li:hover, ul.SideBarMenu li.CSStoHighlight {
 	display: inline;
 }
 
-/* @group message */
 
-.message {
-	/*border: 1px solid #CCCCCC;*/
-	font-family: lato, Verdana, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	background-color: white;
-	margin: 0;
-	padding: 20px;
-	position: relative;
-	top: 0;
-	left: 0;
-	border: 10px solid #f3f3f3;
-}
-
-.message h1 {
-	font-family: lato;
-	font-size: 14pt;
-	font-weight: 300;
-}
-.tags, .msg {
-	margin: 10px;
-	padding: 10px;
-	
-}
-.message p, .tags p, .msg p, #requests p a {
-	font-family: lato, Verdana, Arial, Helvetica, sans-serif;
-	font-size: 9pt;
-	font-weight: normal;
-	
-	color: #000099;
-}
-.message h2, .tags h2, .msg h2 {
-	color: #0033CC;
-	font-size: 10pt;
-	font-weight: normal;
-	font-family: Lato, Verdana, Arial, Helvetica, sans-serif;
-	margin: 0px;
-	padding: 0px;
-}
-
-/* @end */
 
 .tags {
 	background-image: url(../img/tag.png);
@@ -576,7 +535,7 @@ ul.SideBarMenu li:hover, ul.SideBarMenu li.CSStoHighlight {
 	color: #666666;
 	text-decoration: none;
 }
-#login, #signupform {
+/*#login, #signupform {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 9pt;
 	font-weight: normal;
@@ -585,7 +544,7 @@ ul.SideBarMenu li:hover, ul.SideBarMenu li.CSStoHighlight {
 	border: 1px solid #CCCCCC;
 	margin: 10px;
 	padding: 10px;
-}
+}*/
 .tb   {
 	border: 1px solid #CCCCCC;
 }

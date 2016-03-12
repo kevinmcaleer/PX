@@ -25,18 +25,11 @@ if (isset($_POST['serviceid']))
   <p>Services</p>
 </div>
 <div class="container">
-<div class="sidebar">
-<div class="sidebarcontent">
-  <?php
-include INCLUDES_PATH . 'motd.php'; 					// display the message of the day
-include INCLUDES_PATH . 'fortune.php';
+<?php
+include INCLUDES_PATH . 'sidebar.php';
 ?>
-</div> <!-- sidebar content-->
-</div> <!-- sidebar -->
 <div class="two_column">
 <?php	
-	
-	
 	if(isset($_POST['submitted']))
 		{
 			

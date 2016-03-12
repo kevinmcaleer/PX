@@ -64,9 +64,9 @@ function check_login($connection, $email, $upass)
 		
 		//include ('../../Includes/connection.php');
 		
-		$q = "SELECT count(id), firstname, email, pass FROM contact WHERE email = '" .$email. "' AND pass = '". $upass ."'";
+		$q = "SELECT id, firstname, email, pass FROM contact WHERE email = '" .$email. "' AND pass = '". $upass ."'";
 		//echo $q;
-		$r = $sc_connection->query($q)->fetchcolumn(); // Run the query.
+		$r = $sc_connection->query($q); // Run the query.
 
 		// Check the result:
 		
@@ -78,15 +78,13 @@ function check_login($connection, $email, $upass)
 		//$mycount = $sc_connection->query($query)->fetchcolumn();
 		//$rowcount = $mycount;
 		
-		
-		if ($r == 1 )
+		if ($r->rowCount() > 0)
 		{
-
+			$row = $r->fetch(PDO::FETCH_ASSOC);
 			// Fetch the Record:
 
 			// $row = pg_fetch_array($r, PGSQL_ASSOC);
-			$row = $r;
-
+			
 			// Return true and the record:
 			return array(true,$row);
 		} else 
