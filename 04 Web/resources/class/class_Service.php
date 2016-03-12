@@ -12,6 +12,7 @@ class Service
 	public $restrictions;
 	public $parent;
 	public $image;
+	public $dateadded;
 
 	// load the specific service
 	public function load($serviceid)
@@ -33,6 +34,7 @@ class Service
 			$this->restrictions = $row['restrictions'];
 			$this->parent = $row['parent'];
 			$this->image = $row['image'];
+			$this->dateadded = $row['dateadded'];
 		}
 		else
 		{
@@ -45,7 +47,7 @@ class Service
 	{
 		//require '../../delete/sc_connection.php';
 		require '../resources/config.php';
-		$query = "SELECT id, name, description, parent, image FROM service WHERE parent is null ORDER BY name ASC";
+		$query = "SELECT id, name, description, parent, image, dateadded FROM service WHERE parent is null ORDER BY name ASC";
 		$result = $sc_connection->query($query);
 		
 	}
@@ -54,7 +56,7 @@ class Service
 	public function loadallservices()
 	{
 		require '../resources/config.php';
-		$query = "SELECT id, name, description, parent, image FROM service ORDER BY name ASC";
+		$query = "SELECT id, name, description, parent, image, dateadded FROM service ORDER BY name ASC";
 		$result = $sc_connection->query($query);
 		return $result;
 	}
@@ -69,13 +71,13 @@ class Service
 		echo "Parent: " . $this->parent . "<br />\n";
 		echo "image path: " . $this->image ;
 		echo '<img src="images/' . $this->image . '">';
-		
+		echo 'Date Added: ' . $this->dateadded . "\n";
 	}
 
 	public function getChildren()
 	{
 		require '../resources/config.php';
-		$query = "SELECT id, name, description, responsibilities, restrictions FROM service WHERE parent = " . $this->id;
+		$query = "SELECT id, name, description, responsibilities, restrictions, dateadded FROM service WHERE parent = " . $this->id;
 		$result = $sc_connection->query($query);
 		
 		return ($result);
@@ -95,16 +97,12 @@ class Service
 		}
 		else
 		{
-			$query = $query .  $this->parent;
-			
-			
+			$query = $query .  $this->parent;	
 		}
-		
 		if ($this->image != '')
 		{
 			$query = $query . ", image = '" . $this->image . "'";
 		}
-		
 		$query = $query . " WHERE id = ".  $this->id;
 		
 		//echo $query;
@@ -118,9 +116,7 @@ class Service
 		$query = 'SELECT image FROM service WHERE image IS NOT NULL GROUP BY image';
 		$result = $sc_connection->query($query);
 		return $result;
-	
 	}
-
 }
 
 ?>

@@ -2,8 +2,6 @@
 
 // Service Page
 
-
-
 if (isset($_POST['serviceid']))
 {
 	session_start();

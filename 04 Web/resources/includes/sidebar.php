@@ -5,7 +5,5 @@
 		include INCLUDES_PATH . 'motd.php'; 					// display the message of the day
 		include INCLUDES_PATH . 'fortune.php';
 	?>
-  </div>
-  <!-- sidebar content--> 
-</div>
-<!-- sidebar -->
+  </div> <!-- Close sidebar content--> 
+</div> <!-- Close sidebar -->
