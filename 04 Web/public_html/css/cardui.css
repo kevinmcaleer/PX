@@ -5,6 +5,29 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/* @group message boxes */
+
+.info, .alert, .warning {
+	background-color: white;
+	margin: 10px 10px 5px;
+	padding: 10px;
+	color: black;
+	text-align: left;
+}
+
+.info {
+	border-left: 5px solid green;
+}
+
+.alert {
+	border-left: 5px solid orange;
+}
+.warning {
+	border-left: 5px solid #B10007;
+}
+
+/* @end */
+
 .cards {
 	width:100%;
 	position: relative;
