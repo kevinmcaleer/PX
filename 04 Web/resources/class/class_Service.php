@@ -20,7 +20,7 @@ class Service
 		//include '../../delete/connection.php';
 		//include '../../delete/sc_connection.php';
 		include '../resources/config.php';
-		$query = "SELECT * FROM service WHERE id = $serviceid";
+		$query = "SELECT * FROM service WHERE id = " . $serviceid;
 		$result = $sc_connection->query($query);
 		
 		

@@ -5,21 +5,34 @@
 // Display search results
 
 session_start();
-include '../resources/includes/header.inc.php';
-include '../resources/includes/navigation.inc.php';
-
-echo '<div class="message">';
-echo '<h1>Search';
+include '../resources/config.php';
+include INCLUDES_PATH . 'header.html';
+include INCLUDES_PATH . 'user.php';
+?>
+<div class="title">
+  <p>Search</p>
+</div>
+<div class="container">
+<?php
+include INCLUDES_PATH . 'sidebar.php';
+?>
+<div class="two_column">
+  <?php
+include INCLUDES_PATH . 'navigation.html';	// load the navigation bar
+?>
+<div class="message">
+<h1>Search
+<?php
 if(isset($_GET['search']))
 {
 	echo ' results for: ' . $_GET['search'];
 }
-
-echo '</h1>';
-echo '</div>';
-
+?>
+</h1>
+</div>
+<div class="message">
+<?php
 // check that something has been posted (using the get string)
-
 if(isset($_GET['search']))
 {
 	echo '<form action="searchsuggest.php" method="GET" name="search" target="searchframe">';
@@ -27,18 +40,6 @@ if(isset($_GET['search']))
 	echo 'Search: <input type="text" name="search" onfocus="this.form.submit()" onkeyup="this.form.submit()" autocomplete="off" value="' . $_GET['search'] . '"/>';
 	echo '</form>';
 	//echo '<iframe src="searchsuggest.php" name="searchframe" height="600" width="100%" frameborder="0"></iframe>';
-
-	
-	
-	//require '../resources/class/class_search.php';
-	//$mySearch = new Search();
-	//$search = $_GET['search'];
-	//$myResults = $mySearch->go($search);
-	// echo 'You searched for: ' . $_GET['search'];
-	//while ($row = pg_fetch_array($myResults))
-	//{
-	//	echo $row['name'];
-	//}
 }
 else
 {
@@ -51,8 +52,8 @@ else
 	
 }
 echo '<iframe src="searchsuggest.php" name="searchframe" height="600" width="100%" frameborder="0"></iframe>';
-include '../resources/includes/footer.inc.php';
-
-
 ?>
-
+</div>
+<?php
+include '../resources/includes/footer.inc.php';
+?>

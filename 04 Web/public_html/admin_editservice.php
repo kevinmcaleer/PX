@@ -5,98 +5,84 @@
 // for editing services
 
 session_start();
-include '../resources/includes/header.inc.php';
-include '../resources/includes/navigation.inc.php';
-
+include '../resources/config.php';
+include INCLUDES_PATH . 'header.html';
+include INCLUDES_PATH . 'user.php';
+?>
+<div class="title">
+  <p>Edit Service</p>
+</div>
+<div class="container">
+<?php
+include INCLUDES_PATH . 'sidebar.php';
+?>
+<div class="two_column">
+<?php
 if(isset($_POST['serviceid']))
 {
+	include INCLUDES_PATH . 'navigation.html';	// load the navigation bar	
 	// check current user is authorised to edit a service
 	
 	if($usr->level="A")
 	{
-		/*
-		if(isset($_POST['submitted']))
 		{
-			
-			include_once '../resources/class/class_service.php';
-			$myService = new Service();
-			$myService->load($_POST['serviceid']);
-			$myService->name = $_POST['name'];
-			$myService->description = $_POST['description'];
-			$myService->parent = $_POST['parent'];
-			$myService->save();
-			echo '<div class="message"><p>Changes Saved</p></div>';		
-			// reload services page?		
-		}
-		else		
-		*/
-		{
-			echo '<table width="100%" cellspacing="0" cellpadding="0" border="0">' . "\n <!-- Layout Table-->"; // create a table for layout 
- 			echo '<tr><td valign="top">' . "\n";
-			echo '<script language="JavaScript" type="text/javascript">
+			?>
+			<table width="100%" cellspacing="0" cellpadding="0" border="0"><!-- Layout Table--> 
+ 			<tr><td valign="top">
+			<script language="JavaScript" type="text/javascript">
 			  <!--
 			  function saveform ()
 			  {
   			   	document.editserviceform.submit() ;
 			  }
 			  -->
-			  </script>' . "\n";
-	
+			  </script>
+			<?php
 			// echo $_POST['serviceid'];
 			include_once '../resources/class/class_service.php';
 			$myService = new Service();
 			$myService->load($_POST['serviceid']);
-			// $myService->show();
-			
-			 ////////////////////////////////////////////////////////////////////////
- 
- 			echo '<table width="100%" cellspacing="0" cellpadding="0" border="0">' . "\n  <!-- Layout Table 2-->"; // create a table for layout 
- 			echo '<tr><td valign="top">' . "\n";
- 
-			echo '<form enctype="multipart/form-data" name="editserviceform" method="POST" action="servicepage.php">' . "\n";
-			echo '<input type="hidden" name="MAX_FILE_SIZE" value="300000" />';
-			echo '<input type="hidden" name="serviceid" value="'. $myService->id .'"/>' . "\n";
-			echo '<input type="hidden" name="submitted">' . "\n";
-			
-			 // Display the service heading
- 			echo '<div id="editservicedetails">' . "\n";
-			echo '<table width="100%" border="0" cellpadding="0" cellspacing="0">' . "\n  <!-- Layout Table 3-->"; // service layout		
-			echo '<tr><td valign="top">' . "\n";
-			echo '<div class="servicename">' . "\n";
-			echo 'Edit: ' . "\n";
+			?> 
+ 			<table width="100%" cellspacing="0" cellpadding="0" border="0"><!-- Layout Table 2-->
+ 			<tr><td valign="top">
+			<form enctype="multipart/form-data" name="editserviceform" method="POST" action="servicepage.php">
+			<input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+			<?php
+            echo '<input type="hidden" name="serviceid" value="'. $myService->id .'"/>';
+			?>
+			<input type="hidden" name="submitted"> 
+ 			<div id="editservicedetails">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0"><!-- Layout Table 3-->
+			<tr><td valign="top">
+			<div class="servicename">
+			Edit:
+            <?php
 			echo '<input type="text" name="name" value="'. $myService->name .'" class="tb"/><br />';
-			// . $myService->name ;
-			echo '</div>' . "\n";
+			?>
+			</div>
+			</td>
+			<td align="right" valign="top">
+			<p class="edit"><a href="javascript:saveform()">Save changes</a></p>
+			</td></tr></table><!-- Layout Table 3 End-->													
 			
-			echo '</td>' . "\n";
+            <!-- Description -->
+			<div class="message">
+			<h2>Description</h2><br />
+			<p>
+            <?php
+			echo '<input type="text" name="description" value="' . $myService->description . '" class="tb" size="80" maxlength="255" />';
+			?>
+			</div>
+			</p>
+			<!-- Parent Service -->
 			
-			echo '<td align="right" valign="top">' . "\n";
-			echo '<p class="edit"><a href="javascript:saveform()">Save changes</a></p>' . "\n";
-			
-			
-			// close table
-			echo '</td></tr></table>' . "\n  <!-- Layout Table 3 End-->";														// end service layout
-			
-			/// Description
-			
-			echo '<div class="message">' . "\n";
-			echo '<h2>Description</h2><br />' . "\n";
-			echo '<p>' . "\n";
-			
-			echo '<input type="text" name="description" value="' . $myService->description . '" class="tb" size="80" maxlength="255" />' . "\n";
-			echo '</div>' . "\n";
-			echo '</p>' . "\n";
-			
-			/// Parent Service
-			
-			echo '<div class="message">' . "\n";
-			echo '<h2>Parent Service<h2><br />' . "\n";
-			echo '<p>' . "\n";
-			// echo $myService->parent;
-			echo '<select name="parent" class="tb" />' . "\n";
-			
-			echo '<option value="NULL">None</option>';
-			
+			<div class="message">
+			<h2>Parent Service</h2><br />
+			<p>
+			<!-- // echo $myService->parent; -->
+			<select name="parent" class="tb" />
+			<option value="NULL">None</option>
+			<?php
 			$options = new Service();
 			$optionrow = $options->loadallservices();
 			while($myRow = $optionrow->fetch(PDO::FETCH_ASSOC))
@@ -175,6 +161,6 @@ if(isset($_POST['serviceid']))
 	
 }
 
-include '../resources/includes/footer.inc.php';
+include '../resources/includes/footer.html';
 
 ?>

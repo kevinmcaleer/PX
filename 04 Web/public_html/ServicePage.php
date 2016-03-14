@@ -5,7 +5,8 @@
 if (isset($_POST['serviceid']))
 {
 	session_start();
-	require_once('../resources/config.php');
+	
+	
 	require_once('../resources/class/class_contact.php');
 	$usr = new Contact();
 	if (isset($_SESSION['id']))
@@ -16,80 +17,37 @@ if (isset($_POST['serviceid']))
 	{
 		setcookie('serviceid',$_POST['serviceid']);
 	}
-	include '../resources/includes/header.html';
-	include '../resources/includes/navigation.html';
-	include INCLUDES_PATH . 'user.php';
-?>
 
-<div class="title">
-  <p>Services</p>
-</div>
-<div class="container">
-<?php
-include INCLUDES_PATH . 'sidebar.php';
-?>
-<div class="two_column">
-<?php	
+	include '../resources/config.php';
+	include INCLUDES_PATH . 'header.html';
+	include INCLUDES_PATH . 'user.php';
+	?>
+	<div class="title">
+ 	<p>Service Details</p>
+	</div>
+	<div class="container">
+	<?php
+	include INCLUDES_PATH . 'sidebar.php';
+	?>
+	<div class="two_column">
+  	<?php
+	
 	if(isset($_POST['submitted']))
 		{
-			
+			include INCLUDES_PATH . 'navigation.html';	// load the navigation bar			
 			include '../resources/class/class_service.php';
 			$myService = new Service();
 			$myService->load($_POST['serviceid']);
 			$myService->name = $_POST['name'];
 			$myService->description = $_POST['description'];
 			$myService->parent = $_POST['parent'];
-			//echo 'image: '. $_FILES['image']['name'] . "<br />";
-			//echo 'image from list: '. $_POST['imagefromlist'];
-			
-			//$myService->save();
-			// echo '<div class="message"><p>Changes Saved</p></div>';
-			
-			// if an existing file has been selected, use this and ignore the fileupload
-			
-			/*
-			if($_FILES['image']['name'] !='')
-			{
-				echo 'yes its set';
-			}
-			else
-			{
-				echo 'no its not set';
-			}
-			*/
-			
 			if($_FILES['image']['name'] != '')
 			{
-				
-			
-			
-			
-			 // upload the file
-			// echo 'File Submitted';
-			 //if(isset($_POST['submitted']))
-			 {
-			 //	echo ', testing if files is set';
 				if($_FILES['image']['name'] != '')
 				{
-				//	echo ', checking if file is in array';
 					$allowed = array ('image/pjpeg', 'image/jpeg', 'image/JPG', 'image/X-PNG', 'image/PNG', 'image/png', 'image/x-png');
 					if(in_array($_FILES['image']['type'],$allowed))
 					{
-					
-					
-					
-					    //	echo ', checking if file already exists';
-						// sod it - just overwrite the current file
-						/*
-						if(file_exists(__dir__ . "/images/".  $_FILES['image']['name']))
-						// check the file doesn't already exist
-						{
-							echo '<div class="message">';
-							echo '<p>A file with that name already exists</p>';
-							echo '</div>';
-						}
-						else
-						*/
 						if(move_uploaded_file($_FILES['image']['tmp_name'], __dir__ . "/img/{$_FILES['image']['name']}"))
 						{
 							// echo '<p><em>The file has been uploaded!</em></p>';
@@ -118,59 +76,44 @@ include INCLUDES_PATH . 'sidebar.php';
 				}
 			 $myService->save();
 			 }	
-			 
-			
-			 //else
-			 //{
-		 //		echo 'not submiteed';
-		//	 }
 		  }else
 			if($_POST['imagefromlist'] != '' || $_POST['imagefromlist'] != 'NULL')
 			{
 				$myService->image = $_POST['imagefromlist'];
 				$myService->save();
 			}
-		
 		}
-	
 	{
-	
  // Load the current service
  include_once '../resources/class/class_service.php';
  //echo $_POST['serviceid'];
  $myService = new Service();
  $myService->load($_POST['serviceid']);
  //$myService->show();
-
- ////////////////////////////////////////////////////////////////////////
- 
- echo '<table width="100%" cellspacing="0" cellpadding="0" border="0">' . "\n"; // create a table for layout 
- echo '<tr><td valign="top">' . "\n";
- 
- 
- 
- // Display the service heading
- echo '<div id="servicedetails">';
- 
- echo '<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td valign="top">';
- 
- echo '<div class="servicename">';
- 
- echo '<table><tr><td>'; // a table for layout
- // Display Service Image
+ ?>
+ <table width="100%" cellspacing="0" cellpadding="0" border="0">
+ <tr><td valign="top">
+ <div id="servicedetails">
+ <table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td valign="top">
+ <div class="servicename">
+ <table><tr><td>
+ <! --// Display Service Image -->
+ <?php
  echo '<img src="images/' . $myService->image . '" width="64" height="64" />';
- echo '</td><td>'; 
+ ?>
+ </td><td>
+ <?php
  echo $myService->name;
- echo '</td></tr></table>';
- echo '</div>';
- echo '</td>';
- 
- 
- 
+ ?>
+ </td></tr></table>
+ </div>
+ </td> 
+ <?php
  // if the user is an administrator show the edit link
  if ($usr->level=='A')
  {
- 	echo '<script language="JavaScript" type="text/javascript">
+	?>
+ 	<script language="JavaScript" type="text/javascript">
 		  <!--
 		  function editservice ( selectedservice )
 		  {
@@ -184,31 +127,35 @@ include INCLUDES_PATH . 'sidebar.php';
 			document.tagsearchform.submit();
 		  }
 		  -->
-		  </script>';
+		  </script>
 	
-	echo '<td  valign="top">';
-	echo '<form action="admin_editservice.php" method="post" name="editserviceform">';
-	echo '<input type="hidden" name="serviceid" />';
-	
+	<td  valign="top">
+	<form action="admin_editservice.php" method="post" name="editserviceform">
+	<input type="hidden" name="serviceid" />
+	<?php
 	echo '<p class="edit" align="right"><a href="javascript:editservice(' . "'" . $_POST['serviceid'] . "'" . ')">Edit this Service</a></p>';
- 	echo '</form>';
-	echo '</td>';
+	?>
+ 	</form>
+	</td>
  }
- echo '</tr></table>' . "\n";
- echo '<div class="msg">';
- echo '<h2>Description</h2><br />';
- echo '<p>';
+ </tr></table>
+ <div class="msg">
+ <h2>Description</h2><br />
+ <p>
+ <?php
  echo "$myService->description";
- echo '</p>';
- echo '</div>';
- echo '</div>';
-   
+ ?>
+ </p>
+ </div>
+ </div>
+ <?php  
  // display any related children service
  
  include '../resources/includes/service.inc.php';
- echo '<div class="message">';
- echo '<h2>Related Services</h2><br />';
- 
+ ?>
+ <div class="message">
+ <h2>Related Services</h2><br />
+ <?php
  // check if this is a top level node or a child
  if ($myService->parent != '')
  {
@@ -217,10 +164,13 @@ include INCLUDES_PATH . 'sidebar.php';
  	echo '<p>Parent: <a href="javascript:loadservice(' . $myParent->id  .  ')">' . $myParent->name;
  	echo '</a></p>';
  }
- echo '<form action="servicepage.php" method="POST" name="serviceform">';
- echo '<input type="hidden" name="serviceid" />';
- echo '</form>';
- echo '<p>';
+ ?>
+ <form action="servicepage.php" method="POST" name="serviceform">
+ <input type="hidden" name="serviceid" />
+ </form>
+ <p>
+ 
+ <?php
  $children = $myService->getChildren();
  
  $first = TRUE;
@@ -239,24 +189,25 @@ include INCLUDES_PATH . 'sidebar.php';
 	echo $childrow['name'];
 	echo '</a>';
  }
+ ?>
+ </p>
+ </div>
+ <! -- // show tags -->
+ <div class="tags">
+ <p>tags:</p>
  
- echo '</p>';
- echo '</div>';
- 
- // show tags
- 
- echo '<div class="tags">';
- echo '<p>tags:</p>';
- 
+ <?php
  // create a tag object
  include '../resources/class/class_tag.php';
+ 
  $myTag = new Tag();
  $tagrow = $myTag->loadAllForService($myService->id);
  $first = TRUE;
- 
- echo '<form name="tagsearchform" method="GET" action="searchresults.php" >';
- echo '<input type="hidden" name="search" />';
- echo '</form>';
+ ?>
+ <form name="tagsearchform" method="GET" action="searchresults.php" >
+ <input type="hidden" name="search" />
+ </form>
+ <?php
  while($row = $tagrow->fetch(PDO::FETCH_ASSOC))
  {
  	$tag = $row['name'];
@@ -264,37 +215,33 @@ include INCLUDES_PATH . 'sidebar.php';
 	if ($first)
 	{
 		$first = FALSE;
-	
 	}
 	else
 	{
 		echo '<span class="tag">, </span>';
 	}
-	
-	
 	echo '<a href="javascript:searchtag(' . "'" . $tag . "'"  .')" '. " class='tag'>" . $tag. '</a>';
  }
- 
  // if administrator allow adding of tags
  if(isset($_SESSION['id']))
  {
  	if($usr->level='A')
  	{
-	
-		echo '<p align="right"><img src="img/edit.png" /><a onclick="javascript:toggleLayer('. "'tagedit'" . ' )">Add Tag<a/></p>';
-		echo '<div id="tagedit"';
-		echo '<iframe name="tageditform" src="admin_addtag.php" frameborder="0" width="505"></iframe>';
-		echo '</div>';
+	?>
+	<p align="right"><img src="img/edit.png" /><a href='onclick="javascript:toggleLayer('. "'tagedit'" . ' )'">Add Tag<a/></p>
+	<div id="tagedit">
+	<iframe name="tageditform" src="admin_addtag.php" frameborder="0" width="505"></iframe>
+	</div>
+    <?php
  	}
  }
- echo '</div>';
- 
-
- // close the table data tags
- echo "</td>\n";
-
+ ?>
+ </div>
+ <! -- // close the table data tags -->
+ </td>
+	<!--
 	// include the javascript for posting requests to the itrequest.php page
-	echo '
+	-->
 	<script language="JavaScript" type="text/javascript">
 	<!--
 	function dorequest ( selectedrequest )
@@ -303,18 +250,16 @@ include INCLUDES_PATH . 'sidebar.php';
 		document.dorequestform.submit() ;
 	}
 	-->
-	</script>';
-
-
+	</script>
+    <?php
  include '../resources/includes/request_info.inc.php';
-
  
  // Close the page layout table tags
  
  echo "</td></tr>\n";
  echo "</table>\n";
  
-}
+	}
 }
 else
 {
