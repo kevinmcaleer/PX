@@ -1,6 +1,18 @@
 <?php
 
 /**
+ * Configuration File
+ *
+ * @author Kevin McAleer kevin.mcaleer@advicefactory.co.uk
+ * @copyright (c) 2016, Advice Factory Ltd
+ * @link http://www.servicepoint.online
+ * @since Version 1.0
+ * @filesource
+ *
+ */
+// -----------------------------------------------------------------------------
+
+/**
   Stolen from: http://code.tutsplus.com/tutorials/organize-your-next-php-project-the-right-way--net-5873
 
   The important thing to realize is that the config file should be included in every
@@ -44,12 +56,10 @@ $config['db']['sc']['dsn'] = "mysql:host=" . $config['db']['sc']['host'] . "; db
   setup file (code that is run at the start of every page request), but they work
   just as well in your config file if it's in php (some alternatives to php are xml or ini files).
  */
-
 /**
   Creating constants for heavily used paths makes things a lot easier.
   ex. require_once(LIBRARY_PATH . "Paginator.php")
  */
-
 defined("LIBRARY_PATH") || define("LIBRARY_PATH", '../library/');
 
 
