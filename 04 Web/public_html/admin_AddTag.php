@@ -22,8 +22,6 @@ if (isset($_POST['tag'])) {
     $myTag->name = $name;
     $myTag->add();
 
-    // reload page
-
     $tagged = TRUE;
 }
 

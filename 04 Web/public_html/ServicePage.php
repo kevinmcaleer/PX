@@ -17,8 +17,6 @@ if (isset($_POST['serviceid']))
 	{
 		setcookie('serviceid', $_POST['serviceid']);
 	}
-
-	include '../resources/config.php';
 	include INCLUDES_PATH . 'header.html';
 	include INCLUDES_PATH . 'user.php';
 	?>
