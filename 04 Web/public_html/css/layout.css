@@ -191,7 +191,8 @@ div.hotdogmenu {
 /* footer */
 .footer {
 	height: 30px;
-	margin:0px; auto;
+	/* margin:0px; auto; */
+        margin:0px auto;
 	padding: 0;
 	text-align:center;
 	width:100%;

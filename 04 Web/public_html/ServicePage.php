@@ -15,7 +15,7 @@ if (isset($_POST['serviceid']))
 	}
 	else
 	{
-		setcookie('serviceid',$_POST['serviceid']);
+		setcookie('serviceid', $_POST['serviceid']);
 	}
 
 	include '../resources/config.php';

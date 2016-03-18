@@ -60,7 +60,7 @@ if(isset($_SESSION['id']))
 	<h2>Who's who</h2>
 	<p>Department Information</p>
 	</div></td></tr></table>
-	<?
+	<?php
 	// echo 'FAQ/HowTos, Best Practice, Poicies, Glossary of Terms, Whos Who';
 }
 else
