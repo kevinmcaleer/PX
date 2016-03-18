@@ -91,7 +91,12 @@ class Tag {
             $this->name = $row['name'];
         }
     }
-
+    
+    /**
+     * LoadAllTahs for a particular service
+     * @param type $serviceid
+     * @return type
+     */
     public function loadAllForService($serviceid) {
         include '../resources/config.php';
         $query = '

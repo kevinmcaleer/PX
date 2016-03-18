@@ -6,9 +6,8 @@
 if (isset($_POST['serviceid'])) 
 {
 	session_start();
-	
-	
-	require_once('../resources/class/class_contact.php');
+        include '../resources/config.php';
+	require_once CLASS_PATH . 'class_contact.php';
 	$usr = new Contact();
 	if (isset($_SESSION['id']))
 	{
