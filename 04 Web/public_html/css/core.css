@@ -70,7 +70,7 @@ h1 {
 	color: #333333;
 	font-weight: 400;
 }
-.servicename {
+/*.servicename {
 	font-family: Geneva, Arial, Helvetica, sans-serif;
 	font-size: 12pt;
 	font-weight: bold;
@@ -79,7 +79,7 @@ h1 {
 	padding: 10px;
 	border: 1px solid #CCCCCC;
 	background-color: #FFFFFF;
-}
+}*/
 #requests, #logo {
 	border: 1px solid #CCCCCC;
 	margin: 10px;

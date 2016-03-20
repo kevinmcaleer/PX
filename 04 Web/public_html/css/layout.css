@@ -3,12 +3,48 @@
 
 /* @group Service Details */
 
+.servicedetails {
+	position: relative;
+	width: 100%;
+	display: block;
+}
 .servicedetails .image img {
 	object-fit: cover;
 	width: 100%;
 	height: 200px;
+	position: relative;
 }
 
+.tile {
+	display: inline-block;
+	float: left;
+	clear: none;
+	background: white;
+	padding: 10px;
+	margin: 10px 5px 0;
+	position: relative;
+	border-top: 5px solid orange;
+}
+
+.related {
+	background: silver;
+	color: white;
+	border-top: 5px solid gray;
+}
+
+.servicedetails h1{
+	position: absolute;
+	left: 0px;
+	display: inline-block;
+	background-color: orange;
+	margin: 0 5px 10px 10px;
+	color: white;
+	padding: 5px 10px;
+	bottom: 0px;
+	font-size: 20pt;
+	height: 40px;
+	border-right: 10px solid #e19200;
+}
 /* @end *//* @override http://localhost/px/public_html/css/layout.css
 	http://www.servicepoint.online/css/layout.css */
 

@@ -17,6 +17,7 @@
 
 include '../resources/config.php';
 include_once CLASS_PATH . 'class_service.php';
+include_once CLASS_PATH . 'class_card.php';
 
 class class_view_service {
 
@@ -38,38 +39,78 @@ class class_view_service {
 
     public function show() {
         ?>
-        <div class="message">
-            <div class="servicedetails">
-                <div class="image">
-                <?php             
+
+        <div class="servicedetails">
+            <div class="image message">
+                <?php
                 echo '<img src="' . $this->myservice->image . '" />';
                 ?>
-                </div>
-                <div class="servicename">
+            </div>
+            <div class="servicename">
+                <h1>
                     <?php
                     echo $this->myservice->name;
                     ?>
-                </div>
-                <div class="description">
-                    <?php
-                    echo $this->myservice->description;
-                    ?>
-                </div>
-                <div class="date added:">
-                    <?php
-                    echo 'Date added: ' . date('d M y', strtotime($this->myservice->dateadded));
-                    ?>
-                </div>
-                <div class="related">
-                
-                </div>
-                <div class="responsibilities">
-                    <?php
-                    echo 'Responsibilities: ' . $this->myservice->responsibilities ;
-                    ?>
-                </div>
+                </h1>
             </div>
+            <div class="description tile">
+                <?php
+                echo $this->myservice->description;
+                ?>
+            </div>
+            <div class="dateadded tile">
+                <?php
+                echo 'Date added: ' . date('d M y', strtotime($this->myservice->dateadded));
+                ?>
+            </div>
+            <div class="responsibilities tile">
+                <?php
+                echo 'Responsibilities: ' . $this->myservice->responsibilities;
+                ?>
+            </div>
+            <div class="restrictions tile">
+                <?php
+                echo 'Restrictions: ' . $this->myservice->restrictions;
+                ?>
+            </div>
+            <div class="related tile">
+                <?php
+                echo 'Related Services: ';
+
+                // check if this is a top level node or a child
+                if ($this->myservice->parent != '') {
+                    $myParent = new Service();
+                    $myParent->load($this->myservice->parent);
+                    echo '<p>Parent: <a href="javascript:loadservice(' . $myParent->id . ')">' . $myParent->name;
+                    echo '</a></p>';
+                }
+                ?>
+                <form action="servicepage.php" method="POST" name="serviceform">
+                    <input type="hidden" name="serviceid" />
+                </form>
+                <p>
+                    <?php
+                    $children = $this->myservice->getChildren();
+
+                    $first = TRUE;
+                    while ($childrow = $children->fetch(PDO::FETCH_ASSOC)) {
+                        if ($first == TRUE) {
+                            $first = FALSE;
+                        } else {
+                            echo " | ";
+                        }
+                        $mycard = new Card;
+                        $mycard->load($this->myservice->id);
+                        $mycard->show();
+//                        echo '<a href="javascript:loadservice(' . $childrow['id'] . ')">';
+//                        echo $childrow['name'];
+//                        echo '</a>';
+                    }
+                    ?></p>
+            </div>
+            
         </div>
+
         <?php
     }
 

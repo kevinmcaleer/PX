@@ -31,6 +31,17 @@ require_once CLASS_PATH . 'class_view_service.php';
 <div class="title">
     <p>Service Details</p>
 </div>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function loadservice ( selectedservice )
+{
+  document.serviceform.serviceid.value = selectedservice ;
+  document.serviceform.submit() ;
+}
+-->
+</script>
+
 <div class="container">
     <?php
     include INCLUDES_PATH . 'sidebar.php';
