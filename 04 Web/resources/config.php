@@ -67,7 +67,7 @@ defined("LIBRARY_PATH") || define("LIBRARY_PATH", '../library/');
  * The location of all the include files
  */
 defined('INCLUDES_PATH') || define("INCLUDES_PATH", '../resources/includes/');
-defined("CLASS_PATH") || define("CLASS_PATH", '../resources/class');
+defined("CLASS_PATH") || define("CLASS_PATH", '../resources/class/');
 defined("RESOURCES") || define("RESOURCES", '../resources/');
 defined("TEMPLATES_PATH") || define("TEMPLATES_PATH", '../templates/');
 

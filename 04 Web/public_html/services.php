@@ -21,8 +21,19 @@ include INCLUDES_PATH . 'sidebar.php';
 <div class="two_column">
 <?php
 require '../resources/includes/navigation.html';
-include '../resources/includes/service.inc.php';
 
+?>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function loadservice ( selectedservice )
+{
+  document.serviceform.serviceid.value = selectedservice ;
+  document.serviceform.submit() ;
+}
+-->
+</script>
+<?php
 /////////////////////////////////////////////////////////////////////
 //
 // Display a description of this page
@@ -37,7 +48,7 @@ include '../resources/includes/service.inc.php';
 </td></tr></table>
 </div> <!-- close the service list -->
 <div id="servicelist">
-<form action="servicepage.php" name="serviceform" method="POST">
+<form action="servicedetails.php" name="serviceform" method="POST">
 <input type="hidden" name="serviceid" />
 <?php
 include '../resources/class/class_card.php';

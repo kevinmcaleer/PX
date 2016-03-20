@@ -1,4 +1,15 @@
-/* @override http://localhost/px/public_html/css/layout.css
+/* @override 
+	http://www.servicepoint.online/css/layout.css */
+
+/* @group Service Details */
+
+.servicedetails .image img {
+	object-fit: cover;
+	width: 100%;
+	height: 200px;
+}
+
+/* @end *//* @override http://localhost/px/public_html/css/layout.css
 	http://www.servicepoint.online/css/layout.css */
 
 /* CSS Document */
