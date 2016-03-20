@@ -1,5 +1,21 @@
 <?php
-// Service Page
+/**
+ * Service Page
+ * 
+ * Shows the Details of a particular service. This page needs to be massively simplified.
+ * The new servicedetails.php is the simplified version.
+ * The new edit_servicedetails.php is the accompanying edit version.
+ *
+ * @author Kevin McAleer kevin.mcaleer@advicefactory.co.uk
+ * @copyright (c) 2016, Advice Factory Ltd
+ * @link http://www.servicepoint.online
+ * @since Version 1.0
+ * @filesource
+ *
+ */
+// -----------------------------------------------------------------------------
+
+// 
 if (isset($_POST['serviceid'])) {
     session_start();
 
