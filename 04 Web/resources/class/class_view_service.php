@@ -74,6 +74,8 @@ class class_view_service {
                 ?>
             </div>
             <div class="related tile">
+                <div class="cards">
+                    
                 <?php
                 echo 'Related Services: ';
 
@@ -81,11 +83,15 @@ class class_view_service {
                 if ($this->myservice->parent != '') {
                     $myParent = new Service();
                     $myParent->load($this->myservice->parent);
-                    echo '<p>Parent: <a href="javascript:loadservice(' . $myParent->id . ')">' . $myParent->name;
-                    echo '</a></p>';
+                    //echo '<p>Parent: <a href="javascript:loadservice(' . $myParent->id . ')">' . $myParent->name;
+                    echo '<p>Parent: ';
+                    $mycard = new card;
+                    $mycard->load($myParent->id);
+                    $mycard->show();
+                    echo '</p>';
                 }
                 ?>
-                <form action="servicepage.php" method="POST" name="serviceform">
+                <form action="servicedetails.php" method="POST" name="serviceform">
                     <input type="hidden" name="serviceid" />
                 </form>
                 <p>
@@ -107,6 +113,7 @@ class class_view_service {
 //                        echo '</a>';
                     }
                     ?></p>
+                </div>
             </div>
             
         </div>

@@ -64,36 +64,36 @@ while ($row = $myList->fetch(PDO::FETCH_ASSOC))
 	$mycard->url = 'javascript:loadservice('. "'" . $row['id']. "'" .')';
 	$mycard->date = $row['dateadded'];
 	$mycard->show();
-	require_once '../resources/class/class_service.php';
-	$myChild = new Service();
-	$myChild->load($row['id']);
-	// $myChild->show();
-	
-	$serviceChildren = 	$myChild->getChildren();
-	
-	$bit = FALSE;
-	$first = TRUE;
-	while ($children = $serviceChildren->fetch(PDO::FETCH_ASSOC))
-	{
-		if($bit == FALSE)
-		{
-			$bit = TRUE;
-			//echo '<BR />';
-		}
-		if($first==TRUE)
-		{
-		 	$first = FALSE;
-		}	
-		else
-		{
-		//	echo " | ";
-		}
-		
-		// create a hyperlink to open the selected service
-		echo '<a class="ServiceLineDescription" href="javascript:loadservice('. "'". $children['id'] . "'". ')">';
-		echo $children['name'];
-		echo "</a>\n";
-	}
+//	require_once '../resources/class/class_service.php';
+//	$myChild = new Service();
+//	$myChild->load($row['id']);
+//	// $myChild->show();
+//	
+//	$serviceChildren = 	$myChild->getChildren();
+//	
+//	$bit = FALSE;
+//	$first = TRUE;
+//	while ($children = $serviceChildren->fetch(PDO::FETCH_ASSOC))
+//	{
+//		if($bit == FALSE)
+//		{
+//			$bit = TRUE;
+//			//echo '<BR />';
+//		}
+//		if($first==TRUE)
+//		{
+//		 	$first = FALSE;
+//		}	
+//		else
+//		{
+//		//	echo " | ";
+//		}
+//		
+//		// create a hyperlink to open the selected service
+//		echo '<a class="ServiceLineDescription" href="javascript:loadservice('. "'". $children['id'] . "'". ')">';
+//		echo $children['name'];
+//		echo "</a>\n";
+//	}
 }
 ?>
 

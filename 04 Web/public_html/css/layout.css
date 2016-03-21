@@ -11,7 +11,7 @@
 	padding: 0;
 	height: 200px;
 }
-.servicedetail .image {
+.servicedetails .image {
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -41,6 +41,8 @@
 	background: silver;
 	color: white;
 	border-top: 5px solid gray;
+	float: left;
+	clear: both;
 }
 
 .servicedetails h1{
