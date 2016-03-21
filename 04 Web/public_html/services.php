@@ -19,7 +19,10 @@ $serviceList->loadall($myList);
 include INCLUDES_PATH . 'sidebar.php';
 ?>
 <div class="two_column">
+    
 <?php
+if(isset($_SESSION['id']))
+{
 require '../resources/includes/navigation.html';
 
 ?>
@@ -100,6 +103,14 @@ while ($row = $myList->fetch(PDO::FETCH_ASSOC))
 </div> <! -- close the cards div -->
 </form>
 </div>
+<?php 
+
+}
+else
+{
+	include '../resources/includes/login_required.php';
+}
+?>
 </div>
 </div>
 <?php

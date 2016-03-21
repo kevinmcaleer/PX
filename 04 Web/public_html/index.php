@@ -11,7 +11,6 @@
  * @filesource
  * 
  */
-
 // -----------------------------------------------------------------------------
 
 $page_title = 'Home';
@@ -32,16 +31,21 @@ include INCLUDES_PATH . 'user.php';
     include INCLUDES_PATH . 'sidebar.php';
     ?>
     <div class="two_column">
-        <?php
-        include INCLUDES_PATH . 'navigation.html'; // load the navigation bar
-        ?>
 
         <?php
-        include 'servicecat.php';    // load servicecat.php (which loads the frontpage.htm
+        if (isset($_SESSION['id'])) {
+            include INCLUDES_PATH . 'navigation.html'; // load the navigation bar
+            ?>
+
+            <?php
+            include 'servicecat.php';    // load servicecat.php (which loads the frontpage.htm
+        } else {
+            include '../resources/includes/login_required.php';
+        }
         ?>
     </div>
 </div>
 
-<?php
-include INCLUDES_PATH . 'footer.html'; // load the footer
-?>
+        <?php
+        include INCLUDES_PATH . 'footer.html'; // load the footer
+        ?>

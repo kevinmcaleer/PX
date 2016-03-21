@@ -19,7 +19,7 @@ function openlink ( selectedtype )
 
 if(isset($_GET['search']))
 {
-	echo '<form name="suggestform" action="servicepage.php" method="POST">';
+	echo '<form name="suggestform" action="servicedetails.php" method="POST">';
 	echo '<input type="hidden" name="serviceid">';
 	
 	include '../resources/class/class_search.php';
@@ -39,7 +39,7 @@ if(isset($_GET['search']))
 		{	
 			echo '<tr><td width="32">';
 			echo '<a href="javascript:openlink(' . $row['id'] . ')" target="_top">';
-			echo '<img src="images/' . $row['image'] . '" height="32" width="32" />';
+			echo '<img src="img/' . $row['image'] . '" height="32" width="32" />';
 			echo '</a>';
 			echo '</td>';
 			echo '<td class="searchresultline">';
