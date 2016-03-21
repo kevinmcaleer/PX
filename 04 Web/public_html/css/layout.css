@@ -9,12 +9,15 @@
 	display: block;
 	margin: 0;
 	padding: 0;
+	height: 200px;
 }
 .servicedetail .image {
 	margin: 0;
 	padding: 0;
 	position: relative;
 	display: block;
+	border-width: 0;
+	border-style: none;
 }
 .servicedetails .image img {
 	object-fit: cover;
