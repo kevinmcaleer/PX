@@ -41,7 +41,7 @@ class class_view_service {
         ?>
 
         <div class="servicedetails">
-            <div class="image message">
+            <div class="image">
                 <?php
                 echo '<img src="' . $this->myservice->image . '" />';
                 ?>
@@ -100,7 +100,7 @@ class class_view_service {
                             echo " | ";
                         }
                         $mycard = new Card;
-                        $mycard->load($this->myservice->id);
+                        $mycard->load($childrow['id']);
                         $mycard->show();
 //                        echo '<a href="javascript:loadservice(' . $childrow['id'] . ')">';
 //                        echo $childrow['name'];

@@ -62,7 +62,7 @@ while ($row = $myList->fetch(PDO::FETCH_ASSOC))
 	$mycard->title = $row['name'];
 	$mycard->description = $row['description'];
 	$mycard->url = 'javascript:loadservice('. "'" . $row['id']. "'" .')';
-	$mycard->date = strtotime($row['dateadded']);
+	$mycard->date = $row['dateadded'];
 	$mycard->show();
 	require_once '../resources/class/class_service.php';
 	$myChild = new Service();

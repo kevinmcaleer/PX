@@ -23,7 +23,8 @@ class Card {
         echo '<div class="cardTitle">' . $this->title . '</div>' . "\n";
         echo '<div class="cardDescription">' . $this->description . '</div>' . "\n";
         echo '<div class="cardDate">';
-        echo date("d M y", $this->date);
+        echo date("d M y", strtotime($this->date));
+        //echo $this->date;
         echo '</div>' . "\n";
         echo '<div class="cardItems"> ' . $this->items . '</div>' . "\n";
         echo '</div>';
